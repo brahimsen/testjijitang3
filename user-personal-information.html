@@ -1,0 +1,816 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Jijitang Fron End Development</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-modal.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/popover.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/owl.carousel.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="mobile-fonts.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/squares.css" type="text/css" media="screen" />
+
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="js/Jquery-11.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/jquery.popover-1.1.2.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/user-form-validation.js"></script>
+<script src="js/text-length-script.js"></script>
+<script src="js/profiles-script.js"></script>
+<script src="js/masonry.js"></script>
+
+
+<script src="js/zebra_datepicker.js"></script>
+
+<style>
+
+@media(max-width: 980px) {
+
+.user-form-holder {
+
+padding-top: 10px !important;
+
+}
+
+.index-top-page-header {
+
+position: relative !important;
+
+}
+}
+
+.profile-grid-item  {
+	 width: calc( (100% - 20.1px) / 2 );
+ float: left;
+ margin-bottom: 20px;
+}
+
+  @media screen and (min-width: 1440px) {
+.profile-grid-item  {
+
+ width: calc( (100% - 40.1px) / 3 );
+ 
+	
+}
+
+}
+
+@media screen and (max-width:767px) {
+	
+	
+.profile-grid-item  {
+	 width: 100%;
+
+}
+
+}
+
+.square-grids {
+
+	width: 100%;
+	padding-top: 0px;
+
+}
+
+input {
+
+height: 40px !important;
+
+}
+
+input:focus {
+
+border: 1px solid #a4ce4c !important;
+
+}
+
+textarea:focus {
+
+border: 1px solid #a4ce4c !important;
+
+}
+
+textarea:focus {
+
+border: 1px solid #a4ce4c !important;
+box-shadow: none !important;
+
+}
+
+
+.input-group p {
+
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 20px;
+
+
+
+}
+
+.input-focused {
+
+color: #a4ce4c !important;
+
+}
+
+.form-horizontal .control-label {
+
+	text-align: left;
+	width: auto !important;
+
+}
+
+img[src='Error.src']{
+    display: none;
+}
+
+
+
+</style>
+
+<script>
+
+$( document ).ready(function() {
+	
+	if($(window).width() < 767){
+    $('#profile-columns').removeAttr('id');
+}
+	
+
+});
+
+$(document).ready(function(){
+	
+	$(".form-control").on("focus blur",function(){
+    $(this).siblings(".control-label").toggleClass("input-focused");
+});
+	
+	});
+
+</script>
+
+
+<script>
+
+$(document).ready(function(){
+	
+
+	
+	
+	$("#add-interests-btn").click(function(e) {
+    
+           $(".project-keyword-list").append(" <div class='editor-all-tags'><span class='tag-text'>"+$("#project-keywords").val()+"</span><div class='tag-delete lnr lnr-cross'></div></div>");
+	   $("#project-keywords").val('')
+   
+});
+
+	 $('.project-keyword-list').on('click', '.tag-delete', function(){
+	 	
+	 $(this).parent().remove()
+   
+});
+	
+	
+	});
+	
+	
+	 $(document).ready(function() {
+	 
+	 
+	$('.regis-form-next').click(function(){
+    window.scrollTo(0,0)
+    return false;
+ });
+  
+  function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                $('.fileToUploaddis').attr('src', e.target.result);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+    $(".fileToUpload").change(function(){
+        readURL(this);
+    });
+  
+   });
+
+</script>
+
+
+
+
+
+<!-- HTML5 shim for IE backwards compatibility -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+
+</head>
+
+
+
+<body style="background: #222222 ">
+
+<div class="new-index-header" style="position: relative; z-index: 9999">
+                
+               
+                
+                </div>
+  	
+
+	<div class="container-fluid">
+	
+		<div class="user-form-holder">
+		
+			
+			<div class="user-form-inner">
+			
+			
+			<form class=" form" >
+	  	
+		<div class="error-message-style" id="sign-up-error"></div>
+		
+		
+		<div class="box row-fluid">	
+			
+			<div class="step">
+			 <div class="modal-header user-step-header">
+ 
+				<p>Personal Profile </p>
+				<div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+
+ 
+				</div>
+				
+				<p class="user-step-text hidden-phone">Tell us a Bit More About Yourself</p>
+				
+				
+			
+		<div class="user-info-upload-img">
+			
+			
+                        
+                        
+        			<img style="width: 100%; height: 100%" class="fileToUploaddis" src="img/select-img.png"  />
+					
+                        <input type="file" name="fileToUpload" class="upload-project-image fileToUpload fileToUpload-style" >
+						
+						
+                        
+           
+			
+			
+			
+			
+			</div> 
+			
+			<div class="fileUpload btn btn-primary my-mobile-pic-uploader">
+				<span>Add Photo</span>
+				<input type="file" name="fileToUpload" class="upload fileToUpload" />
+			</div>
+			
+			
+			
+		<div class="user-info-first-step-right">
+		
+		
+				<div class="input-group">
+					
+					<input class="form-control" name="fullname" placeholder="Your Name">
+				</div>
+				
+				<div class="input-group">
+					
+					<textarea id="shortbio" class="form-control" placeholder="Short Bio"></textarea>
+					<p class="text-counter" id="bio-counter"><span>0</span>/200</p>
+				</div>
+				
+		</div>
+		
+			</div>
+			
+			<div class="step">
+			 <div class="modal-header user-step-header">
+
+				<p>Research Profile </p>
+				<div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+
+ 
+				</div>
+				
+				<p class="user-step-text hidden-phone">Tell us a Bit More About Your Reaearch</p>
+			
+			<label class="group-label">Position, Intitution and Department</label>
+			
+			<div class="input-group">
+			
+					<input class="form-control"  placeholder="Position">
+				</div>
+				
+				<div class="input-group">
+				
+					<input class="form-control"  placeholder="Institution">
+				</div>
+				
+				<div class="input-group">
+				
+					<input class="form-control"  placeholder="Department">
+				</div>
+				
+			<hr class="user-sep-line">
+				
+				
+			
+			<div class="input-group user-field-group" >
+					
+					<label class="user-field-label">Research Field</label>
+					
+					
+					<select name="field" class="form-control user-form-select">
+						<option value="">Reaearch Field</option>
+						<option value="Economics">Economics</option>
+						<option value="Natural Sciences">Natural Sciences</option>
+						
+						</select>
+			</div>
+				
+			<hr class="user-sep-line">
+			
+			<label class="group-label">Research Interests</label>
+		
+			<div class="input-group keywords-group " >
+				
+				<input type="text" class="create-project-keywords-input" id="project-keywords"  placeholder="Type Your Reearch Interests"/>
+				<a  id="add-interests-btn" class="new-small-button new-black-btn">Add</a>
+				<div class="project-keyword-list"></div>
+				</div>
+		 
+		 
+		
+		
+		<hr class="user-sep-line">
+
+		
+		
+		<label class="group-label">Research Experience</label>
+		<div class="input-group reserach-setting-experience" >
+				
+					
+					
+				<textarea id="reserachexp" placeholder="Less Then 2000 words"></textarea>
+				<p class="text-counter"  id="exp-counter"><span>0</span>/2000</p>
+				</div>
+
+	  	
+			</div>
+			
+				<div class="step">
+				
+				<div class="modal-header user-step-header">
+ 
+				<p>Recommended Researchers</p>
+				<div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+
+ 
+				</div>
+				
+				<p class="user-step-text hidden-phone">Connect with fellow researchers</p>
+		
+				
+				
+				
+<div class="square-grids" id="profile-columns">
+	
+	
+	
+
+ 
+ <div class="profile-grid-item" > 
+
+<div class="profile-follow-wrapper">
+
+<div class="profile-follow">
+		<a class="profile-page-unfollowed"> Follow</a>
+		<a class="hide-follow-check profile-page-followed"><span class="icon11-check"></span> Unfollow</a>
+		</div>
+
+</div>
+
+<div class="profile-grid-item-inner"> 
+
+	
+	<div class="profile-grid-desc">
+	
+	<a href="#" class="profile-image"><img src="img/brahim.png" /></a>
+	
+	
+	<a class="profile-user-name">Brahim Senhaji</a>
+	<span class="profile-category">Sociology</span>
+	<div class="my-tiny-bullets"><span></span><span></span><span></span></div>
+
+	</div>
+	
+		<p class="profile-box-text"><span class="profile-update-inst">University of California</span><span class="profile-update-field">Geography</span></p>
+	
+	<p class="profile-box-text">Graduated from al alakhwayan university, and illinois weseleyan university with a bachelor degree of computer science and
+	
+	a minor in business a administration Graduated from al alakhwayan university.</p>
+	
+	<div class="profile-grid-bottom">
+		
+	<p>
+	<a><span>7</span> Followers</a>
+	<a><span>10</span> Fans</a>
+	<a><span>23</span> Projects</a>
+	<a><span>127</span> Articles</a>
+	</p>
+	</div>
+
+</div> 
+</div> 
+
+<div class="profile-grid-item" > 
+
+<div class="profile-follow-wrapper">
+
+<div class="profile-follow">
+		<a class="profile-page-unfollowed"> Follow</a>
+		<a class="hide-follow-check profile-page-followed"><span class="icon11-check"></span> Unfollow</a>
+		</div>
+
+</div>
+
+
+<div class="profile-grid-item-inner"> 
+
+	
+	<div class="profile-grid-desc">
+	
+	<a href="#" class="profile-image"><img src="img/profile1.jpg" /></a>
+	
+	
+	<a class="profile-user-name">Albert Einstein</a>
+	<span class="profile-category">Scientist</span>
+	<div class="my-tiny-bullets"><span></span><span></span><span></span></div>
+
+	</div>
+	
+	<p class="profile-box-text"><span class="profile-update-inst">Not Specified</span><span class="profile-update-field">Chemistery</span></p>
+	
+	<p class="profile-box-text">Not Specified</p>
+	
+	<div class="profile-grid-bottom">
+		
+	<p>
+	<a><span>7</span> Followers</a>
+	<a><span>10</span> Fans</a>
+	<a><span>1</span> Projects</a>
+	<a><span>0</span> Articles</a>
+	</p>
+	</div>
+
+</div> 
+</div> 
+
+<div class="profile-grid-item" > 
+
+<div class="profile-follow-wrapper">
+
+<div class="profile-follow">
+		<a class="profile-page-unfollowed"> Follow</a>
+		<a class="hide-follow-check profile-page-followed"><span class="icon11-check"></span> Unfollow</a>
+		</div>
+
+</div>
+
+
+<div class="profile-grid-item-inner"> 
+
+	
+	<div class="profile-grid-desc">
+	
+	<a href="#" class="profile-image"><img src="img/brahim.png" /></a>
+	
+	
+	<a class="profile-user-name">Brahim Senhaji</a>
+	<span class="profile-category">Developer</span>
+	<div class="my-tiny-bullets"><span></span><span></span><span></span></div>
+
+	</div>
+	
+	<p class="profile-box-text"><span class="profile-update-inst">Al Akhawayn University</span><span class="profile-update-field">Computer Science and Software engineering</span></p>
+	
+	<p class="profile-box-text">Graduated from al alakhwayan university, and illinois weseleyan university with a bachelor degree of computer science and
+	
+	a minor in business a administration Graduated from al alakhwayan university.</p>
+	
+	<div class="profile-grid-bottom">
+		
+	<p>
+	<a><span>7</span> Followers</a>
+	<a><span>10</span> Fans</a>
+	<a><span>23</span> Projects</a>
+	<a><span>127</span> Articles</a>
+	</p>
+	</div>
+
+</div> 
+</div> 
+
+<div class="profile-grid-item" > 
+
+<div class="profile-follow-wrapper">
+
+<div class="profile-follow">
+		<a class="profile-page-unfollowed"> Follow</a>
+		<a class="hide-follow-check profile-page-followed"><span class="icon11-check"></span> Unfollow</a>
+		</div>
+
+</div>
+
+<div class="profile-grid-item-inner"> 
+
+	
+	<div class="profile-grid-desc">
+	
+	<a href="#" class="profile-image"><img src="img/profile4.jpg" /></a>
+	
+	
+	<a class="profile-user-name">Alan Turing</a>
+	<span class="profile-category">Professor</span>
+	<div class="my-tiny-bullets"><span></span><span></span><span></span></div>
+
+	</div>
+	
+	<p class="profile-box-text"><span class="profile-update-inst">Al Akhawayn University</span><span class="profile-update-field">Computer Science</span></p>
+	
+	<p class="profile-box-text">Graduated from al alakhwayan university,.</p>
+	
+	<div class="profile-grid-bottom">
+		
+	<p>
+	<a><span>7</span> Followers</a>
+	<a><span>10</span> Fans</a>
+	<a><span>23</span> Projects</a>
+	<a><span>127</span> Articles</a>
+	</p>
+	</div>
+
+</div> 
+</div> 
+
+<div class="profile-grid-item" > 
+
+<div class="profile-follow-wrapper">
+
+<div class="profile-follow">
+		<a class="profile-page-unfollowed"> Follow</a>
+		<a class="hide-follow-check profile-page-followed"><span class="icon11-check"></span> Unfollow</a>
+		</div>
+
+</div>
+
+
+<div class="profile-grid-item-inner"> 
+
+	
+	<div class="profile-grid-desc">
+	
+	<a href="#" class="profile-image"><img src="img/profile2.jpg" /></a>
+	
+	
+	<a class="profile-user-name">Brahim Senhaji</a>
+	<span class="profile-category">Sociology</span>
+	<div class="my-tiny-bullets"><span></span><span></span><span></span></div>
+
+	</div>
+	
+		<p class="profile-box-text"><span class="profile-update-inst">University of Vienna</span><span class="profile-update-field">Music</span></p>
+
+	
+	<p class="profile-box-text">Graduated from al alakhwayan university, and illinois weseleyan university with a bachelor degree of computer science and
+	
+	a minor in business a administration Graduated from al alakhwayan university.</p>
+	
+	<div class="profile-grid-bottom">
+		
+	<p>
+	<a><span>7</span> Followers</a>
+	<a><span>10</span> Fans</a>
+	<a><span>23</span> Projects</a>
+	<a><span>127</span> Articles</a>
+	</p>
+	</div>
+
+</div> 
+</div> 
+
+<div class="profile-grid-item" > 
+
+<div class="profile-follow-wrapper">
+
+<div class="profile-follow">
+		<a class="profile-page-unfollowed"> Follow</a>
+		<a class="hide-follow-check profile-page-followed"><span class="icon11-check"></span> Unfollow</a>
+		</div>
+
+</div>
+
+<div class="profile-grid-item-inner"> 
+
+	
+	<div class="profile-grid-desc">
+	
+	<a href="#" class="profile-image"><img src="img/profile1.jpg" /></a>
+	
+	
+	<a class="profile-user-name">Dennis Ritchie</a>
+	<span class="profile-category">Programmer</span>
+	<div class="my-tiny-bullets"><span></span><span></span><span></span></div>
+
+	</div>
+	
+	<p class="profile-box-text"><span class="profile-update-inst">MIT</span><span class="profile-update-field">Computer Science</span></p>
+	<p class="profile-box-text">Not specified</p>
+	
+	<div class="profile-grid-bottom">
+		
+	<p>
+	<a><span>7</span> Followers</a>
+	<a><span>10</span> Fans</a>
+	<a><span>23</span> Projects</a>
+	<a><span>127</span> Articles</a>
+	</p>
+	</div>
+
+</div> 
+</div> 
+
+<div class="profile-grid-item" > 
+
+<div class="profile-follow-wrapper">
+
+<div class="profile-follow">
+		<a class="profile-page-unfollowed"> Follow</a>
+		<a class="hide-follow-check profile-page-followed"><span class="icon11-check"></span> Unfollow</a>
+		</div>
+
+</div>
+
+<div class="profile-grid-item-inner"> 
+
+	
+	<div class="profile-grid-desc">
+	
+	<a href="#" class="profile-image"><img src="img/profile3.jpg" /></a>
+	
+	
+	<a class="profile-user-name">Brahim Senhaji</a>
+	<span class="profile-category">Sociology</span>
+	<div class="my-tiny-bullets"><span></span><span></span><span></span></div>
+
+	</div>
+	
+	<p class="profile-box-text"><span class="profile-update-inst">MIT</span><span class="profile-update-field">Computer Science</span></p>
+	
+	<p class="profile-box-text">Graduated from al alakhwayan university, and illinois weseleyan university with a bachelor degree of computer science and
+	
+	a minor in business a administration Graduated from al alakhwayan university. and illinois weseleyan university with a bachelor degree of computer science and
+	
+	a minor in business a administration Graduated from al alakhwayan university.</p>
+	
+	<div class="profile-grid-bottom">
+		
+	<p>
+	<a><span>7</span> Followers</a>
+	<a><span>10</span> Fans</a>
+	<a><span>23</span> Projects</a>
+	<a><span>127</span> Articles</a>
+	</p>
+	</div>
+
+</div> 
+</div> 
+
+<div class="profile-grid-item" > 
+
+<div class="profile-follow-wrapper">
+
+<div class="profile-follow">
+		<a class="profile-page-unfollowed"> Follow</a>
+		<a class="hide-follow-check profile-page-followed"><span class="icon11-check"></span> Unfollow</a>
+		</div>
+
+</div>
+
+<div class="profile-grid-item-inner"> 
+
+	
+	<div class="profile-grid-desc">
+	
+	<a href="#" class="profile-image"><img src="img/brahim.png" /></a>
+	
+	
+	<a class="profile-user-name">Brahim Senhaji</a>
+	<span class="profile-category">Sociology</span>
+	<div class="my-tiny-bullets"><span></span><span></span><span></span></div>
+
+	</div>
+	
+	<p class="profile-box-text">Graduated from al alakhwayan university, and illinois weseleyan university with a bachelor degree of computer science and
+	
+	a minor in business a administration Graduated from al alakhwayan university.</p>
+	
+	<div class="profile-grid-bottom">
+		
+	<p>
+	<a><span>7</span> Followers</a>
+	<a><span>10</span> Fans</a>
+	<a><span>23</span> Projects</a>
+	<a><span>127</span> Articles</a>
+	</p>
+	</div>
+
+</div> 
+</div>  
+
+	</div>
+		
+			</div>
+			
+			
+			
+		
+			
+			
+			
+			
+			
+			
+			
+		
+			
+	
+			
+					 <div class="controls modal-btn-holder">
+					
+					<button type="button" class="action btn-sky text-capitalize main-btn next btn new-small-wide-button new-black-btn  middle-button regis-form-next">NEXT</button>
+					<button type="button" class="action btn-hot text-capitalize main-btn submit btn new-small-wide-button new-black-btn  middle-button">SUBMIT</button>
+			
+			
+			
+			</div>
+			 		
+
+		</div>
+		
+	 
+	</form> 
+	
+			</div>
+		
+		
+		</div>
+    
+
+    
+    </div>
+
+</body>
+
+
+
+<script src="js/owl.carousel.js"></script>
+
+<script>
+
+$( ".new-index-header" ).load( "header-jijitang.html" );
+$( "footer" ).load( "footer.html" );
+
+
+
+ 
+</script>
+
+<script src="js/masonry-scripts-registration.js"></script>
+<script src="js/myjavascript.js"></script>
+
+
+
+
+

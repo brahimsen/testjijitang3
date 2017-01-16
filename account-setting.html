@@ -1,0 +1,250 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Jijitang Fron End Development</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-modal.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/popover.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/bootstrap-select.css"  type="text/css"/>
+<link href="css/settings-page.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="mobile-fonts.css">
+
+
+
+<link href="style.css" rel="stylesheet" type="text/css">
+
+
+<script src="js/Jquery-11.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap-popover.js"></script>
+<script src="js/bootstrap-tooltip.js"></script>
+<script src="js/bootstrap-modalmanager.js"></script>
+<script src="js/bootstrap-modal.js"></script>
+<script type="text/javascript" src="js/jquery.popover-1.1.2.js"></script>
+<script src="js/jquery.json-2.4.min.js"></script>
+<script src="js/bootstrap-select.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/myform.js"></script>
+<script src="js/myjavascript.js"></script>
+
+<style>
+
+footer {
+
+    border-top: 25px solid #ecead4;
+
+}
+
+
+
+</style> 
+
+<script>
+
+$(document).ready(function() {
+	
+				$('.account-edit-password-holder').hide();
+				
+				
+				
+				$(".account-password-edit").click(function(){
+				
+					
+				$('.account-edit-password-holder').fadeIn(500);
+					});
+					
+			
+
+				$(".cancel-password-edit").click(function(){
+				
+					
+				$('.account-edit-password-holder').hide();
+					});
+					
+					
+			
+
+				});
+</script>
+
+
+
+
+
+
+<!-- HTML5 shim for IE backwards compatibility -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+
+</head>
+
+
+
+<body>
+
+
+	<div class="container-fluid">
+
+
+<div class="header-wrapper">
+		<header >
+        
+        
+		</header>
+  </div>
+  
+  
+  
+  	<div class="padding-wrapper">
+	
+	<div class="padding-wrapper-inner">
+
+	
+	<div class="settings-page">
+	
+		<div class="settings-page-nav">
+		
+		<img src="img/brahim.png" />
+		
+		<div>
+		
+		<a href="account-setting.html"  class="active" >ACCOUNT</a>
+		<a href="profile-setting.html">PROFILE</a>
+		<a href="research-setting.html">RESEARCH</a>
+		<a href="publication-setting.html">PUBLICATION</a>
+		
+		</div>
+		
+		
+		
+		
+		
+		
+		</div>
+		
+		<div class="settings-page-content">
+		
+			<div class="settings-page-header">
+			
+				ACCOUNT SETTINGS
+			
+			</div>
+			
+			<form class="profile-setting-form" role="form">
+			
+			
+			<div class="profile-form-section">
+			
+			<div class="profile-form-label">Phone Number / Email</div>
+			<div class="profile-form-content">
+			
+					<p class="profile-setting-form-text">brahim.senhaji@gmail.com</p>
+			
+			</div>
+			
+			</div>
+			
+			<div class="profile-form-section">
+			
+			<div class="profile-form-label">Password</div>
+			<div class="profile-form-content">
+			
+					  <p><span class="settings-email profile-setting-form-text">*************</span><span class="account-password-edit">Edit</span></p>
+                    
+                    <div class="account-edit-password-holder">
+                    
+                    <p><input placeholder="Old Password" type="password"></p>
+                    <p><input placeholder="New Password"  type="password"></p>
+                     <p><input placeholder="Confirm New Password Password"  type="password"></p>
+                     <p><span class="cancel-password-edit">Cancel</span></p>
+                     
+                     </div>
+			
+			</div>
+			
+			</div>
+			
+	<!--	<div class="profile-form-section">
+			
+			<div class="profile-form-label">Connect Your <br> account to Wechat</div>
+			<div class="profile-form-content">
+			
+				<div class="connect-on-wechat">
+               
+               <img src="img/scan-me.png"/>
+               
+               
+               
+               </div>
+			
+			</div>
+			
+			</div> -->
+			
+			<div class="profile-form-section">
+			
+			<div class="profile-form-label">Default Language</div>
+			<div class="profile-form-content">
+			
+			<select class="profile-select-language">
+			
+				<option value="eng">ENGLISH</option>
+				<option value="zh">CHINESE</option>
+				
+			
+			</select>
+			
+			</div>
+			
+			</div>
+			
+			<div class="profile-form-btns">
+			
+			 <button type="submit"  class="new-big-button new-black-back-btn big-long-btns   middle-button" >SAVE</button>
+			 <button type="submit"  class="new-big-button new-black-btn big-long-btns   middle-button" >CANCEL</button>
+			
+			</div>
+			
+			</form>
+		
+		
+		</div>
+	
+	
+	
+	</div>
+	
+			
+
+	
+	</div>
+	
+	</div>
+        
+
+		<footer></footer>
+		
+		
+    </div>
+
+
+
+
+<script>
+
+$( "header" ).load( "header-jijitang.html" );
+$( "footer" ).load( "footer.html" );
+$( "#aside" ).load( "aside.html" );
+$( "#Entries" ).load( "Entries.html" );
+
+
+  
+
+</script>
+

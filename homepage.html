@@ -1,0 +1,505 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Jijitang Fron End Development</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-modal.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/popover.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/projects.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/article-grids.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/squares.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="mobile-fonts.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/collections.css" type="text/css" media="screen" />
+
+<link href="style.css" rel="stylesheet" type="text/css">
+
+
+<script src="js/Jquery-11.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap-popover.js"></script>
+<script src="js/bootstrap-tooltip.js"></script>
+<script src="js/bootstrap-modalmanager.js"></script>
+<script src="js/bootstrap-modal.js"></script>
+<script type="text/javascript" src="js/jquery.popover-1.1.2.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/myform.js"></script>
+<script src="js/headerscript.js"></script>
+<script src="js/collection-script.js"></script>
+<script src="js/masonry.js"></script>
+
+
+
+<style>
+
+
+
+
+.square-grids {
+
+	margin-top: 50px;
+	width: 100% !important;
+	padding-left: 0% !important;
+	padding-right: 0% !important;
+
+}
+
+
+
+#article-columns {
+
+	background: #ecead4 !important;
+
+}
+
+</style>
+
+
+<script>
+
+
+
+
+
+
+
+$(window).on("load",function() {
+    function fade() {
+        $('.hideme').each(function() {
+            /* Check the location of each desired element */
+            var objectBottom = $(this).offset().top + $(this).outerHeight() -100;
+            var windowBottom = $(window).scrollTop() + $(window).innerHeight();
+            
+            /* If the object is completely visible in the window, fade it in */
+            if (objectBottom < windowBottom) { //object comes into view (scrolling down)
+                if ($(this).css('opacity')==0) {$(this).fadeTo(500,1);}
+            } else { //object goes out of view (scrolling up)
+                if ($(this).css('opacity')==1) {$(this).fadeTo(500,0);}
+            }
+        });
+    }
+    fade(); //Fade in completely visible elements during page-load
+    $(window).scroll(function() {fade();}); //Fade in elements during scroll
+});
+
+
+</script>
+
+
+
+
+
+<!-- HTML5 shim for IE backwards compatibility -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+
+
+
+	<div class="container-fluid">
+    
+    		<div class="index-top-page">
+            
+            	<div class="new-index-header" style="position: relative; z-index: 9999">
+                
+               
+                
+                </div>
+                
+                 <div class="index-slide-holder"> 
+                    
+                    	<h2>JIJITANG SCHOLAR SEARCH</h2>
+						<div class="home-search-holder">
+						<input type="text" placeholder="Search by journal, title, DOI number... "/>
+                        </div>
+                        <a class="new-big-button new-white-btn">SEARCH</a>
+                    
+                     </div>
+            
+            <div class="index-arrow-down-holder"><a href="#arrow-target" class="icon13-arrow-down"  ></a></div>
+            
+            </div>
+    
+    	<div class="index-home-full-width">
+        
+        <div class="index-home-container">
+        
+        	<div class="index-thumb-holder">
+			
+		
+            
+            		
+                    <div>
+                    	
+                        <p class="index-home-thumb-title">GET THE APP !</p>
+                        <p class="index-home-thumb-text">Write your notes, papers, articles with jijitang collobeorative online editor. Write your notes, papers, articles with jijitang collobeorative online editor </p>
+                        <a class="app-img"><img src="img/googleplay.png"></a>
+						<a class="app-img"><img src="img/appstore.png"></a>
+                        
+                    
+                    
+                    </div>
+            
+            			
+            
+            </div>
+            <div class="index-thumb-holder ">
+            
+            		
+                    <div>
+                    	
+                        <p class="index-home-thumb-title">FOLLOW US ON WECHAT</p>
+                        
+                        <a class="app-img" ><img style="width: 96px" src="img/wechatlogo.png"></a>
+                        
+                    
+                    
+                    </div>
+            
+            			
+            
+            </div>
+        
+        
+        </div>
+        
+        </div>
+        <div id="arrow-target" ></div>
+		
+				 <div class="index-collections-holder-header">
+        
+		
+		
+        	<p class="instead-of-h1">RESEARCHERS</p>
+			<div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+            <p class="instead-of-p">A Community for people who are passionate for researching, analysing and writing 
+			</p>
+			
+			<div class="home-more-btn-holder"><a class="new-big-button new-black-btn">SEE ALL</a></div>
+			
+			
+			</div>
+		
+		 <div class="index-collections-holder-header brown-full-back">
+        
+		
+		
+        	<p class="instead-of-h1">COLLECTIONS</p>
+			<div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+            <p class="instead-of-p">A Place for your projects to be seen and commented by other researchers</p>
+        
+			<div class="square-grids" id="collection-columns">
+	
+ <div class="collection-grid-item"  style=" background:url(img/profile1.jpg) no-repeat center center; background-size: cover;"  > 
+
+<div class="collection-follow-wrapper"  >
+
+<div class="collection-follow">
+		<a class="collection-page-unfollowed"> FOLLOW</a>
+		<a class="hide-follow-check collection-page-followed"><span class="icon11-check"></span> FOLLOWING</a>
+</div>
+
+</div>
+
+<div class="collection-grid-item-inner"> 
+
+	<a class="collection-grid-title">Computers</a>
+	<div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+	
+	
+
+</div> 
+
+<p class="collection-grid-meta">
+
+	<a><img src="img/brahim.png" /><span>Brahim Senhaji</span></a>
+	<span class="collection-grid-date">September 30 2015</span>
+
+</p>
+
+<div class="collection-grid-bottom">
+		
+	<p>
+	<a><span>7</span> Articles</a>
+	<a><span>10</span> Followers</a>
+	
+	</p>
+	</div>
+</div> 
+
+ <div class="collection-grid-item"  style=" background:url(img/profile2.jpg) no-repeat center center; background-size: cover;"  > 
+
+<div class="collection-follow-wrapper"  >
+
+<div class="collection-follow">
+		<a class="collection-page-unfollowed"> FOLLOW</a>
+		<a class="hide-follow-check collection-page-followed"><span class="icon11-check"></span> FOLLOWING</a>
+</div>
+
+</div>
+
+<div class="collection-grid-item-inner"> 
+
+<a class="collection-grid-title">Why Blue whaltes dont make sound on the shallow</a>
+	<div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+	
+	
+
+</div> 
+
+<p class="collection-grid-meta">
+
+	<a><img src="img/brahim.png" /><span>Brahim Senhaji</span></a>
+	<span class="collection-grid-date">September 30 2015</span>
+
+</p>
+
+<div class="collection-grid-bottom">
+		
+	<p>
+	<a><span>7</span> Articles</a>
+	<a><span>10</span> Followers</a>
+	
+	</p>
+	</div>
+</div> 
+
+ <div class="collection-grid-item"  style=" background:url(img/profile3.jpg) no-repeat center center; background-size: cover;"  > 
+
+<div class="collection-follow-wrapper"  >
+
+<div class="collection-follow">
+		<a class="collection-page-unfollowed"> FOLLOW</a>
+		<a class="hide-follow-check collection-page-followed"><span class="icon11-check"></span> FOLLOWING</a>
+</div>
+
+</div>
+
+<div class="collection-grid-item-inner"> 
+	
+	<a class="collection-grid-title">Physics</a>
+	<div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+	
+	
+
+</div> 
+
+<p class="collection-grid-meta">
+
+	<a><img src="img/brahim.png" /><span>Brahim Senhaji</span></a>
+	<span class="collection-grid-date">September 30 2015</span>
+
+</p>
+
+<div class="collection-grid-bottom">
+		
+	<p>
+	<a><span>7</span> Articles</a>
+	<a><span>10</span> Followers</a>
+	
+	</p>
+	</div>
+</div> 
+
+ <div class="collection-grid-item"  style=" background:url(img/profile4.jpg) no-repeat center center; background-size: cover;"  > 
+
+<div class="collection-follow-wrapper"  >
+
+<div class="collection-follow">
+		<a class="collection-page-unfollowed"> FOLLOW</a>
+		<a class="hide-follow-check collection-page-followed"><span class="icon11-check"></span> FOLLOWING</a>
+</div>
+
+</div>
+
+<div class="collection-grid-item-inner"> 
+
+	<a class="collection-grid-title">Why cats dont wanna talk to humans, and why dogs are always loyal to his owner</a>
+	<div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+	
+	
+
+</div> 
+
+<p class="collection-grid-meta">
+
+	<a><img src="img/brahim.png" /><span>Brahim Senhaji Gninou ben abderafie</span></a>
+	<span class="collection-grid-date">September 30 2015</span>
+
+</p>
+
+<div class="collection-grid-bottom">
+		
+	<p>
+	<a><span>7</span> Articles</a>
+	<a><span>10</span> Followers</a>
+	
+	</p>
+	</div>
+</div> 
+
+ <div class="collection-grid-item"  style=" background:url(img/profile4.jpg) no-repeat center center; background-size: cover;"  > 
+
+<div class="collection-follow-wrapper"  >
+
+<div class="collection-follow">
+		<a class="collection-page-unfollowed"> FOLLOW</a>
+		<a class="hide-follow-check collection-page-followed"><span class="icon11-check"></span> FOLLOWING</a>
+</div>
+
+</div>
+
+<div class="collection-grid-item-inner"> 
+
+	<a class="collection-grid-title">Why Blue whaltes dont make sound on the shallow</a>
+	<div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+	
+	
+
+</div> 
+
+<p class="collection-grid-meta">
+
+	<a><img src="img/brahim.png" /><span>Brahim Senhaji</span></a>
+	<span class="collection-grid-date">September 30 2015</span>
+
+</p>
+
+<div class="collection-grid-bottom">
+		
+	<p>
+	<a><span>7</span> Articles</a>
+	<a><span>10</span> Followers</a>
+	
+	</p>
+	</div>
+</div> 
+
+ <div class="collection-grid-item"  style=" background:url(img/profile2.jpg) no-repeat center center; background-size: cover;"  > 
+
+<div class="collection-follow-wrapper"  >
+
+<div class="collection-follow">
+		<a class="collection-page-unfollowed"> FOLLOW</a>
+		<a class="hide-follow-check collection-page-followed"><span class="icon11-check"></span> FOLLOWING</a>
+</div>
+
+</div>
+
+<div class="collection-grid-item-inner"> 
+
+	<a class="collection-grid-title">Why Blue whaltes dont make sound on the shallow</a>
+	<div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+	
+	
+
+</div> 
+
+<p class="collection-grid-meta">
+
+	<a><img src="img/brahim.png" /><span>Brahim Senhaji</span></a>
+	<span class="collection-grid-date">September 30 2015</span>
+
+</p>
+
+<div class="collection-grid-bottom">
+		
+	<p>
+	<a><span>7</span> Articles</a>
+	<a><span>10</span> Followers</a>
+	
+	</p>
+	</div>
+</div> 
+
+
+
+	</div>
+
+<a class="home-see-more">SEE MORE PROJECTS</a>
+        
+        </div>
+		
+		
+        
+     
+		
+	
+        
+         
+        
+    <footer>
+	
+	
+    
+    </footer>
+	
+	
+
+</body>
+
+<script>
+
+$( ".new-index-header" ).load( "welcome-header.html" );
+$( "footer" ).load( "footer.html" );
+
+
+$(document).ready(function () {
+    $(document).on("scroll", onScroll);
+    
+    //smoothscroll
+    $('.index-arrow-down-holder a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        $(document).off("scroll");
+        
+      
+        var target = this.hash,
+            menu = target;
+        $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top
+        }, 500, 'swing', function () {
+            window.location.hash = target;
+            $(document).on("scroll", onScroll);
+        });
+    });
+});
+
+function onScroll(event){
+    var scrollPos = $(document).scrollTop();
+    $('.index-arrow-down-holder a').each(function () {
+        var currLink = $(this);
+        var refElement = $(currLink.attr("href"));
+        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+            currLink.addClass("left-active");
+        }
+        else{
+            currLink.removeClass("left-active");
+        }
+    });
+}
+
+ 
+</script>
+<script src="js/masonry-scripts.js"></script>
+<script src="js/myjavascript.js"></script>
+
+
+
+
+

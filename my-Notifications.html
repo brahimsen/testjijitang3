@@ -1,0 +1,295 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Jijitang Fron End Development</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-modal.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/popover.css" type="text/css" media="screen" />
+
+
+
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="mobile-fonts.css" type="text/css"  />
+
+
+<script src="js/Jquery-11.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap-popover.js"></script>
+<script src="js/bootstrap-tooltip.js"></script>
+<script src="js/bootstrap-modalmanager.js"></script>
+<script src="js/bootstrap-modal.js"></script>
+<script src="js/myjavascript.js"></script>
+<script type="text/javascript" src="js/jquery.popover-1.1.2.js"></script>
+<script src="js/follow-script.js"></script>
+
+<!-- HTML5 shim for IE backwards compatibility -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<script>
+
+
+$(document).ready(function() {
+	
+			 $(".accept-request").click(function(){
+						$(this).addClass("request-accepted");
+						$(this).removeClass("accept-request");
+						$(this).siblings(".reject-request").hide();
+					
+						
+								
+				});
+				
+					 $(".reject-request").click(function(){
+						$(this).addClass("request-rejected");
+						$(this).removeClass("reject-request");
+						$(this).siblings(".accept-request").hide();
+					
+						
+								
+				});
+	
+	
+
+});
+
+</script>
+
+<body>
+
+
+
+
+<div class="header-wrapper">
+	<header>
+
+
+	</header>
+</div>
+
+  <div class="main-page-wrapper">
+    
+    
+ 		
+        
+        <div class="main-page-content" >
+        
+		<div class="main-sub-navigation-wrapper">
+		<div class=" dash-main-sub-navigation main-sub-navigatiion">
+            
+          <div><a> <span class="fa fa-rss"></span> <span>Feed</span></a></div>
+		  <div   ><a> <span class="fa fa-file-text"></span> <span>Documents</span></a></div>
+		  <div > <a><span class="fa fa-book"></span> <span>Collections</span></a></div>
+		  <div><a> <span class="fa fa-briefcase"></span> <span>Projects</span></a></div>
+		  <div class="hidden-phone hidden-tablet current"><a> <span class="fa fa-bell"></span> <span>Notifications</span></a></div>
+		  <div class="hidden-phone hidden-tablet"><a> <span class="fa fa-envelope"></span> <span>Messages</span></a></div>
+		  
+            
+         </div>
+		 
+		 </div>
+        
+        		
+				<div class="dashboard-wrapper">
+                
+                <div class="dashbord-content-left hidden-tablet hidden-phone">
+                
+                	
+                
+                        
+                        
+                            <div class="dashbord-content-left-article subscription-followers">
+							
+							<a href="profile-setting.html" class="fa fa-pencil-square-o add-team-member-btn left-section-edit-btn"></a>
+                        
+							<a class="left-section-main-profile"><img src="img/brahim.png" /></a>
+							<p class="left-section-main-name">
+								Brahim Senhaji
+							</p>
+                            
+							<p>
+							
+							lations and chemical genetics at the photoautotrophic transition checkpoint, we reveal that shoot photosynthesis-d
+							
+							</p>
+                      
+                        </div>
+		
+                </div>
+                
+                <div class="dashbord-content-right" >
+				
+				<div class="dashbord-content-right-inner" >
+                
+     <div id="notifications">
+ 
+  
+  		<ul class="nav nav-tabs notifications-tab" role="tablist">
+			
+			<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">NOTIFICATIONS</a></li>
+			<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">REQUESTS</a></li>
+   
+		</ul>
+		
+		
+	
+	<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="home">
+  
+		<ul class="nav nav-tabs notification-sub-tabs notifications-tab" role="tablist">
+			
+			<li role="presentation" class="active"><a href="#all-notifications" aria-controls="all-notifications" role="tab" data-toggle="tab">ALL</a></li>
+			<li role="presentation"><a href="#group-notifications" aria-controls="group-notifications" role="tab" data-toggle="tab">GROUPS</a></li>
+   
+		</ul>
+		
+		<div class="tab-content">
+		
+		<div role="tabpanel" class="notifications-list tab-pane active" id="all-notifications">
+  
+		<div class="notification-item">
+		<a class="notifications-item-img"><img src="img/profile1.jpg" /></a>
+		<p class="notifications-item-event not-events"><a>Brahim senhaji</a> has joined the group <a>Web developers</a></p>
+		<p class="notifications-item-meta"><span>projects</span><span>yesterday</span></p>
+		</div>
+		
+		<div class="notification-item">
+		<a class="notifications-item-img"><img src="img/profile2.jpg" /></a>
+		<p class="notifications-item-event not-events"><a>Albert Einstein and 15 others</a> has followed the article <a>Why the blue whales dont make a sound</a></p>
+		<p class="notifications-item-meta"><span>projects</span><span>3:45 A.M</span></p>
+		</div>
+		
+		</div>
+		
+		<div role="tabpanel" class="list notifications-list tab-pane" id="group-notifications">
+		
+		<div class="notification-item">
+		<a class="notifications-item-img"><img src="img/profile3.jpg" /></a>
+		<p class="notifications-item-event not-events"><a>Brahim senhaji</a> and <a>Alan turing</a> have just broke <a>Enigma Code</a></p>
+		<p class="notifications-item-meta"><span>projects</span><span>yesterday</span></p>
+		</div>
+		
+		<div class="notification-item">
+		<a class="notifications-item-img"><img src="img/profile4.jpg" /></a>
+		<p class="notifications-item-event not-events"><a>Brahim senhaji</a> and <a>Albert Einstein</a> and <a>Dennis Ritchie</a> and <a>Alan Turing</a> and <a>Isaac Newton</a> has joined the group <a>Web developers</a></p>
+		<p class="notifications-item-meta"><span>projects</span><span>yesterday</span></p>
+		</div>
+		
+		<div class="notification-item">
+		<a class="notifications-item-img"><img src="img/profile1.jpg" /></a>
+		<p class="notifications-item-event not-events"><a>Brahim senhaji</a> has joined the group <a>Web developers</a></p>
+		<p class="notifications-item-meta"><span>projects</span><span>yesterday</span></p>
+		</div>
+		
+		<div class="notification-item">
+		<a class="notifications-item-img"><img src="img/profile1.jpg" /></a>
+		<p class="notifications-item-event not-events"><a>Brahim senhaji</a> has joined the group <a>Web developers</a></p>
+		<p class="notifications-item-meta"><span>projects</span><span>yesterday</span></p>
+		</div>
+		
+		</div>
+		
+		</div>
+		
+	
+		
+  </div>
+  
+  
+    <div role="tabpanel" class="list tab-pane" id="profile">
+		
+		<ul class="nav nav-tabs notification-sub-tabs notifications-tab" role="tablist">
+			
+			<li role="presentation" class="active"><a href="#all-requests" aria-controls="all-requests" role="tab" data-toggle="tab">ALL</a></li>
+			<li role="presentation"><a href="#group-requests" aria-controls="group-requests" role="tab" data-toggle="tab">GROUPS</a></li>
+   
+		</ul>
+		
+		<div class="tab-content">
+		
+		<div role="tabpanel" class="notifications-list tab-pane active" id="all-requests">
+		
+		
+		<div class="notification-item request-item">
+		<a class="notifications-item-img"><img src="img/profile1.jpg" /></a>
+		
+		
+		
+		<p class="notifications-item-event not-events"><a>Brahim senhaji</a> has joined the group sdkfh asldkf asdlkfj asdlkfj asdklfj asldkjf asldkjf askdjf laskdjf laksdj flakdsj flkajsd flkajsd lfkj <a>Web developers</a></p>
+		<div class="notification-accept-btns"> 
+			<button class="new-small-button new-black-btn home-header-btn reject-request"></button>
+			<button class="new-small-button light-green-button home-header-btn accept-request"></button> 
+			
+		</div>
+		<p class="notifications-item-meta"><span>projects</span><span>yesterday</span></p>
+		
+		</div>
+		
+		</div>
+		
+		<div role="tabpanel" class="notifications-list tab-pane" id="group-requests">
+		
+		<div class="notification-item request-item">
+		<a class="notifications-item-img"><img src="img/profile1.jpg" /></a>
+		<p class="notifications-item-event not-events"><a>Brahim senhaji</a> has joined the group <a>Web developers</a></p>
+		<div class="notification-accept-btns"> 
+			<button class="new-small-button new-black-btn home-header-btn reject-request"></button>
+			<button class="new-small-button light-green-button home-header-btn accept-request"></button> 
+			
+		</div>
+		<p class="notifications-item-meta"><span>projects</span><span>yesterday</span></p>
+		</div>
+		
+		</div>
+		
+		</div>
+		
+  </div>
+  </div>
+  
+  <div class="load-more-button">LOAD MORE</div>
+
+</div>
+
+
+              </div>
+                </div>
+                            
+                            
+                </div>            
+                            
+                            
+                </div>
+    
+                       
+                         
+                
+                
+                </div>
+				
+		
+
+  <!-- Tab panes -->
+
+
+
+<footer></footer>
+
+<script>
+
+$( "header" ).load( "header-jijitang.html" ); 
+$( "footer" ).load( "footer.html" );
+
+
+  
+</script>
+
+

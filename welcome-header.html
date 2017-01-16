@@ -1,0 +1,505 @@
+
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/myform.js"></script>
+<script src="js/headerscript.js"></script>
+<script src="js/input-scripts.js"></script>
+
+
+
+
+
+
+ <div class="index-top-page-header">
+ 
+ <div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container-fluid nav-holder">
+  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" style=" background: #00093C">
+   <span class="icon-bar"></span>
+   <span class="icon-bar"></span>
+   <span class="icon-bar"></span>
+  </a>
+  
+  <a class="my-logo"><img src="img/logo.png" /></a>
+  
+  <a href="#" id="index-signup-modal" class="new-small-button new-white-btn home-header-btn hidden-phone hidden-tablet">SIGN UP</a>
+  <a href="#" id="index-login-modal" class="new-small-button light-green-button home-header-btn">SIGN IN</a>
+  
+  <div class="nav-collapse collapse">
+  <ul class="nav row-fluid">
+	
+   <li><a class="active" href="/homepage.html">HOME</a></li>
+   <li><a id="about-page" href="/articles.html">ARTICLES</a></li>
+   <li><a id="news-page" href="/collections.html">COLLECTIONS</a></li>
+   <li><a id="doctor-page" href="/projects.html">PROJECTS</a></li>
+   <li><a id="knowledge-page" href="/profiles.html">PROFILES</a></li>
+  
+   
+   
+  
+ 
+        </ul>
+		
+		 
+		
+    </div><!-- /.nav-collapse -->
+	
+	
+	
+    </div><!-- /.container -->
+  </div><!-- /.navbar-inner -->
+</div><!-- /.navbar -->
+                
+                	
+                   
+                    
+                
+</div>
+
+<div id="forgot-password-Modal-email" class="modal hide fade sign-modals" tabindex="-1" style="top: 54%" >
+
+ <div class="modal-header">
+ 
+ <p>Forgot Password</p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+ 
+ <div id="reset-pass-valid-email"> Please input a valid Email address.</div>
+  <div class="modal-body">
+   	
+		<div class="form-group">
+			<div class="controls">
+			    <div class="input-group">
+					<input type="email" class="form-control" id="email-retrieve" name="email-retrieve" placeholder="Input Your Email Address">
+				</div>
+			</div>	
+		</div>
+		
+        
+       
+	      <div class="controls modal-btn-holder">
+		  
+	       <button id="pass-email-retrieve" class="new-small-wide-button new-black-btn  middle-button" >Submit</button>
+           
+
+         <span class="sign-modal-bottom-link" id="reset-pass-with-phone-switch">Retrieve Password with Phone</span>
+           
+           
+  </div>
+  
+  
+	        
+	      </div>
+		  
+		  <div class="New-user-sign" style="text-align: center" ><a class="signup-link"> If You Are New To JIJIANG, Sign Up </a></div>
+		  
+</div>
+
+<div id="forgot-password-Modal-email-submitted" class="modal hide fade sign-modals" tabindex="-1" style="top: 54%" >
+
+ <div class="modal-header">
+ 
+ <p>Password Request Submitted</p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+ 
+ 
+  <div class="modal-body">
+   	
+		
+		<p> A verification Email was sent to you, Please follow the required steps to reset you password.  </p>
+		
+   </div>
+		  
+		
+		  
+</div>
+
+<div id="forgot-password-Modal-phone" class="modal hide fade sign-modals" tabindex="-1" style="top: 54%" >
+
+
+  
+<div class="modal-header">
+ 
+ <p>Forgot Password</p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+ 
+	<div id="valid-phone-alert-reset-pass"> Please input a valid phone number.</div>
+	<div id="phone-validation-error-reset-pass">The verification Code is not valid</div>
+  <div class="modal-body zero-margin" >
+   
+	 
+			
+		
+		
+		<div class="form-group">
+			<div class="controls">
+			    <div class="input-group">
+					<input type="tel" class="form-control" id="phonenumberreg-reset-pass" maxlength="11" placeholder="Phone Number">
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="form-group">
+			<div class="controls">
+			    <div class="input-group verification-code-input">
+					<input type="text" class="form-control" disabled id="verficationcode-reset-pass" maxlength="6" placeholder="Verification Code (6 Digits)">
+					<span id="verificationcodesend-reset-pass">Send Code</span>
+				</div>
+			</div>	
+		</div>
+		
+		
+    
+            <div class="controls modal-btn-holder">
+		  
+	       <button type="submit" class="new-small-wide-button new-black-btn  middle-button" id="submitphonereg-reset-pass" >Sign Up</button>
+         
+			<span class="sign-modal-bottom-link" id="reset-pass-with-email-switch">Retrieve Password with Email</span>
+         
+           
+          
+	        
+	      </div>
+          
+		
+  </div>
+  
+   <div class="New-user-sign" style="text-align: center" ><a class="signup-link"> If You Are New To JIJIANG, Sign Up </a></div>
+		  
+</div>
+
+
+<div id="forgot-password-Modal-phone-verification" class="modal hide fade sign-modals" tabindex="-1" style="top: 54%" >
+
+ <div class="modal-header">
+ 
+ <p>Verification Code</p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+ 
+ <div id="reset-pass-valid-verification"> The verification code you entered is not valid.</div>
+  <div class="modal-body">
+   		
+		<p style="text-align: center; margin-bottom: 15px">A verification code was sent to 1778***123</p>
+		
+		
+		<div class="form-group">
+			<div class="controls">
+			    <div class="input-group">
+					<input type="text" maxlength="6" class="form-control" id="phone-retrieve-verification" name="phone-retrieve-verification" placeholder="Enter Verification Code">
+				</div>
+			</div>	
+		</div>
+		
+        
+       
+	      <div class="controls modal-btn-holder">
+		  
+	       <button id="pass-phone-retrieve" class="new-small-wide-button new-black-btn  middle-button" >Submit</button>
+           
+
+         <span class="sign-modal-bottom-link" id="resubmit-phone-number-pass-reset"> Click here If you don't recieve the code within 60 seconds</span>
+           
+           
+  </div>
+  
+  
+	        
+	      </div>
+		  
+	
+		  
+</div>
+
+<div id="index-Sign-in-Modal" class="modal hide fade sign-modals" tabindex="-1" style="top: 54%" >
+
+ <div class="modal-header">
+ 
+ <p>Sign In </p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+ 
+ <div class="sign-in-alert full-width"> Wrong Email/Password combination.</div>
+  <div class="modal-body">
+   		
+		
+		
+		
+		<div class="form-group">
+			<div class="controls">
+			    <div class="input-group">
+					<input type="text" class="form-control" id="email" name="email" placeholder="Email / Phone Number">
+				</div>
+			</div>	
+		</div>
+		
+		<div class="form-group ">
+			<div class="controls">
+			    <div class="input-group">
+					<input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
+				</div>
+			</div>
+			<span class="forgot-password-link">Forgot Password</span>
+		</div>
+        
+       
+		
+	
+	
+		
+		
+	      <div class="controls modal-btn-holder">
+		  
+	       <button id="mybtn" class="new-small-wide-button new-black-btn  middle-button" >Sign In</button>
+           
+
+         <span class="sign-modal-bottom-link" id="quick-sign-in">Quick Login With Phone</span>
+           
+           
+  </div>
+  
+  
+	        
+	      </div>
+		  
+		  <div class="New-user-sign" style="text-align: center" ><a class="signup-link"> If You Are New To JIJIANG, Sign Up </a></div>
+		  
+</div>
+
+
+
+<div id="Sign-in-Modal-phone" class="modal hide fade sign-modals" tabindex="-1" style=" top: 54%">
+
+	 <div class="modal-header">
+ 
+ <p>Sign In </p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+ 
+	<div id="valid-phone-alert-sign-in"> Please input a valid phone number.</div>
+	<div id="phone-validation-error-sign-in">The verification Code is not valid</div>
+  <div class="modal-body zero-margin" >
+   
+	 
+			
+		
+		
+		<div class="form-group">
+			<div class="controls">
+			    <div class="input-group">
+					<input type="tel" class="form-control" id="phonenumberregsignin" maxlength="11" placeholder="Phone Number">
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="form-group">
+			<div class="controls">
+			    <div class="input-group verification-code-input">
+					<input type="text" class="form-control" disabled id="verificationcodesignin" maxlength="6" placeholder="Verification Code (6 Digits)">
+					<span id="verificationcodesendsignin">Send Code</span>
+				</div>
+			</div>	
+		</div>
+		
+		
+    
+            <div class="controls modal-btn-holder">
+		  
+	       <button type="submit" class="new-small-wide-button new-black-btn  middle-button" id="submitphoneregsignin" >Sign Up</button>
+         
+			<span class="sign-modal-bottom-link" id="email-switch-sign-in">Sign in with Email</span>
+         
+           
+          
+	        
+	      </div>
+          
+		
+  </div>
+   <div class="New-user-sign" style="text-align: center" ><a id="Login-link-from-phone"> If You Are New To JIJIANG, Sign Up  </a></div>
+</div>
+
+
+
+<!--Sign Up Modal-->
+
+
+<div id="Sign-up-Modal-phone" class="modal hide fade sign-modals" tabindex="-1" style=" top: 54%">
+
+	 <div class="modal-header">
+ 
+ <p>Sign Up </p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+ 
+	<div id="valid-phone-alert"> Please input a valid phone number.</div>
+	<div id="phone-validation-error">The verification Code is not valid</div>
+  <div class="modal-body zero-margin" >
+   
+	 
+			
+		
+		
+		<div class="form-group">
+			<div class="controls">
+			    <div class="input-group">
+					<input type="tel" class="form-control" id="phonenumberreg" maxlength="11" placeholder="Phone Number">
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="form-group">
+			<div class="controls">
+			    <div class="input-group verification-code-input">
+					<input type="text" class="form-control" disabled id="verficationcode" maxlength="6" placeholder="Verification Code (6 Digits)">
+					<span id="verificationcodesend">Send Code</span>
+				</div>
+			</div>	
+		</div>
+		
+		
+    
+            <div class="controls modal-btn-holder">
+		  
+	       <button type="submit" class="new-small-wide-button new-black-btn  middle-button" id="submitphonereg" >Sign Up</button>
+         
+			<span class=" sign-modal-bottom-link" id="email-switch-sign-up">Sign up with Email</span>
+         
+           
+          
+	        
+	      </div>
+          
+		
+  </div>
+   <div class="New-user-sign" style="text-align: center" ><a id="Login-link"> If You Have a Jijitang Account, Sign In </a></div>
+</div>
+
+
+
+<div id="password-reg-modal" class="modal hide fade sign-modals" tabindex="-1" style=" top: 54%">
+
+	 <div class="modal-header">
+ 
+ <p>Set Up Password </p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+ 
+  <div class="modal-body zero-margin" >
+   <form class="password-validation-form" role="form">
+	 
+		
+		
+		
+		<div class="form-group ">
+			<div class="controls">
+			    <div class="input-group">
+					<input type="password" class="form-control" id="passregiphone" name="passregiphone" placeholder="Password">
+				</div>
+			</div>
+		</div>
+        
+        <div class="form-group ">
+			<div class="controls">
+			    <div class="input-group">
+					<input type="password" class="form-control" id="passconfphone" name="passconfphone" placeholder="Password Confirmation">
+				</div>
+			</div>
+		</div>
+    
+            <div class="controls modal-btn-holder">
+		  
+	       <button type="submit"  class="new-small-wide-button new-black-btn  middle-button" >Submit</button>
+         
+
+         
+           
+          
+	        
+	      </div>
+          
+		</form>
+  </div>
+
+</div>
+
+<div id="Sign-up-Modal" class="modal hide fade sign-modals" tabindex="-1" style=" top: 54%">
+
+	 <div class="modal-header">
+ 
+ <p>Sign Up </p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+ 
+  <div class="modal-body zero-margin" >
+   <form class="myfirstform" role="form">
+	 
+		
+		
+		
+		
+		<div class="form-group">
+			<div class="controls">
+			    <div class="input-group">
+					<input type="text" class="form-control" id="emailregi" name="emailregi" placeholder="Email">
+				</div>
+			</div>	
+		</div>
+		
+		<div class="form-group ">
+			<div class="controls">
+			    <div class="input-group">
+					<input type="password" class="form-control" id="passregi" name="passregi" placeholder="Password">
+				</div>
+			</div>
+		</div>
+        
+        <div class="form-group ">
+			<div class="controls">
+			    <div class="input-group">
+					<input type="password" class="form-control" id="passconf" name="passconf" placeholder="Password Confirmation">
+				</div>
+			</div>
+		</div>
+    
+            <div class="controls modal-btn-holder">
+		  
+	       <button type="submit"  class="new-small-wide-button new-black-btn  middle-button" >Sign Up</button>
+         
+
+         <span class=" sign-modal-bottom-link" id="phone-switch-sign-up">Sign up with Phone Number</span>
+           
+          
+	        
+	      </div>
+          
+		</form>
+  </div>
+   <div class="New-user-sign" style="text-align: center" ><a id="Login-link-email"> If You Have a Jijitang Account, Sign In </a></div>
+</div>
+
+
+</div>

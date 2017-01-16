@@ -1,0 +1,293 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Jijitang Fron End Development</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-modal.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/popover.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/bootstrap-select.css"  type="text/css"/>
+<link rel="stylesheet" href="mobile-fonts.css" type="text/css"  />
+
+
+
+
+<link href="style.css" rel="stylesheet" type="text/css">
+<link href="css/settings-page.css" rel="stylesheet" type="text/css">
+
+
+<script src="js/Jquery-11.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap-popover.js"></script>
+<script src="js/bootstrap-tooltip.js"></script>
+<script src="js/bootstrap-modalmanager.js"></script>
+<script src="js/bootstrap-modal.js"></script>
+<script type="text/javascript" src="js/jquery.popover-1.1.2.js"></script>
+<script src="js/jquery.json-2.4.min.js"></script>
+<script src="js/bootstrap-select.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/myjavascript.js"></script>
+<script src="js/text-length-script.js"></script>
+
+<style>
+
+footer {
+
+    border-top: 25px solid #ecead4;
+
+}
+
+
+
+</style> 
+
+
+<script>
+
+$(document).ready(function(){
+	
+
+$(".profile-setting-form").validate(
+{rules:
+{name:"required",
+
+},
+
+messages: {
+name:"Please write down your name",
+},
+errorClass:"error",
+highlight: function(label) {
+    $(label).closest('.form-group').removeClass('has-success').addClass('has-error');
+  },
+
+success: function(label) {
+    label
+      .text('looks good').addClass('valid')
+	  .closest('.form-group').addClass('has-success');
+      
+  }
+}
+  
+);
+
+});
+
+ $(document).ready(function() {
+  
+  function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                $('.profile-new-image').attr('src', e.target.result);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+    $("#profile-new-image-btn").change(function(){
+        readURL(this);
+    });
+  
+   });
+   
+    $(document).ready(function() {
+  
+  function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                
+				$('#profile-new-back').css('background', 'transparent url('+e.target.result +') no-repeat center center', 'background-size', 'cover');
+
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+    $("#profile-new-back-btn").change(function(){
+        readURL(this);
+    });
+  
+   });
+
+</script>
+
+
+
+
+
+<!-- HTML5 shim for IE backwards compatibility -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+
+</head>
+
+
+
+<body>
+
+
+	<div class="container-fluid">
+
+
+<div class="header-wrapper">
+		<header >
+        
+        
+		</header>
+  </div>
+  
+  
+  <!-- Here you call success and error messages under parts/top-bar-sucess.html and parts/top-bar-error.html -->
+  
+
+ 
+  
+  	<div class="padding-wrapper">
+	
+	<div class="padding-wrapper-inner">
+
+	
+	<div class="settings-page">
+	
+		<div class="settings-page-nav">
+		
+		<img class="profile-new-image" src="img/brahim.png" />
+		
+		<div>
+		
+		<a href="account-setting.html" >ACCOUNT</a>
+		<a href="profile-setting.html" class="active">PROFILE</a>
+		<a href="research-setting.html">RESEARCH</a>
+		<a href="publication-setting.html">PUBLICATION</a>
+		
+		</div>
+
+		</div>
+		
+		<div class="settings-page-content">
+		
+			<div class="settings-page-header">
+			
+				PROFILE SETTINGS
+			
+			</div>
+			
+			<form class="profile-setting-form" role="form">
+			
+			<div class="profile-form-section">
+			
+			<div class="profile-form-label">Profile Picture</div>
+			
+			<div class="profile-form-content">
+			
+			<div class="profile-img-upload-box" >
+			
+		
+        			<img style="width: 100%; height: 100%" class="profile-new-image" src="img/brahim.png"  />
+					
+                      
+			</div> 
+			
+			<input id="profile-new-image-btn" type="file" class="custom-file-input" style="border: 0px !important;">
+
+			
+			</div>
+			
+			</div>
+			
+			<div class="profile-form-section">
+			
+			<div class="profile-form-label">Background Picture</div>
+			
+			<div class="profile-form-content">
+			
+			<div id="profile-new-back" class="profile-back-upload-box" style="background: url(img/myback.jpg) no-repeat center; background-size: cover" >
+			
+			</div> 
+			
+			<input id="profile-new-back-btn" type="file" class="custom-file-input" style="border: 0px !important;">
+
+			</div>
+			
+			</div>
+			
+			<div class="profile-form-section">
+			
+			<div class="profile-form-label">Name*</div>
+			<div class="profile-form-content">
+			
+					<input type="text" class="form-control" id="name" name="name" value="Brahim Senhaji" placeholder="Name">
+			
+			</div>
+			
+			</div>
+			
+			<div class="profile-form-section">
+			
+			<div class="profile-form-label">Short Bio</div>
+			<div class="profile-form-content">
+			
+					<textarea type="text" class="form-control" id="shortbio" placeholder="Short Biography">Graduated From a Al Akhawayn University with a backlor of science of computer science, interested in software engineering and developement</textarea>
+					<p class="text-counter" id="bio-counter"><span>0</span>/200</p>
+			</div>
+			
+			</div>
+		
+			 <div class="profile-form-btns">
+			
+			 <button type="submit"  class="new-big-button new-black-back-btn big-long-btns   middle-button" >SAVE</button>
+			 <button class="new-big-button new-black-btn big-long-btns   middle-button" >CANCEL</button>
+			
+			</div>
+			
+			
+			</form>
+		
+		
+		</div>
+	
+	
+	
+	</div>
+	
+			
+
+	
+	</div>
+	
+	
+	
+	</div>
+	
+	<footer></footer>
+	
+	
+        
+
+    </div>
+
+
+
+<script>
+
+$( "header" ).load( "header-jijitang.html" );
+$( "footer" ).load( "footer.html" );
+$( "#aside" ).load( "aside.html" );
+
+
+
+  
+
+</script>
+

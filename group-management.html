@@ -1,0 +1,1863 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Jijitang Fron End Development</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-modal.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/popover.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/projects.css" type="text/css" media="screen" />
+
+<link rel="stylesheet" type="text/css" href="css/jquery-comments.css">
+<link rel="stylesheet" href="mobile-fonts.css" type="text/css"  />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="css/article-grids.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link href="style.css" rel="stylesheet" type="text/css">
+
+<script src="js/Jquery-11.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap-popover.js"></script>
+<script src="js/bootstrap-tooltip.js"></script>
+<script src="js/bootstrap-modalmanager.js"></script>
+<script src="js/bootstrap-modal.js"></script>
+<script type="text/javascript" src="js/jquery.popover-1.1.2.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+
+<script src="js/jquery.hotkeys.js"></script>
+<script src="js/bootstrap-wysiwyg.js"></script>
+<script src="js/collection-script.js"></script>
+<script src="js/follow-script.js"></script>
+<script src="js/groups-discussion.js"></script>
+<script src="js/sessions-form.js"></script>
+<script src="js/groups-invitation.js"></script>
+<script src="js/groups-management-top.js"></script>
+<script src="js/masonry.js"></script>
+
+
+
+<!-- HTML5 shim for IE backwards compatibility -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<script>
+
+$(document).ready(
+
+
+
+function(){
+
+	 $('.group-attachement-wrapper').on('click', '.group-attachement-delete', function(){
+	 	
+	 $(this).parent().remove()
+   
+	});
+
+
+  $('#submit-document-to-discussion-btn').click(
+    function(){
+
+   
+
+      if ($('input[name=select-document-discussion]:checked').length) {
+	  
+			$(".group-attachement-wrapper").children('.group-attachement-holder').remove();
+	  
+			var title = $('input[name=select-document-discussion]:checked').siblings('.to-submit-document-title').text();
+			var author = $('input[name=select-document-discussion]:checked').siblings('.to-submit-document-author').text();
+			var category = $('input[name=select-document-discussion]:checked').siblings('.to-submit-document-category').text();
+			var date = $('input[name=select-document-discussion]:checked').siblings('.to-submit-document-publish-date').text();
+			var imagepath = $('input[name=select-document-discussion]:checked').siblings('img').attr("src");
+          
+          $(".group-attachement-wrapper").append("<div id='document-to-attach-content' class='group-attachement-holder'><span class='lnr lnr-cross group-attachement-delete'></span><img class='group-attachement-img' src='"+imagepath+"' /><p class='group-attachement-title'>"+title+"</p><p class='group-attachement-meta' ><span class='to-attach-document-author'>"+author+"</span><span class='to-attach-document-category'>"+category+"</span><span class='to-attach-document-publish-date'>"+date+"</span></p></div>");
+		  
+		  $('#add-document-to-collection-popup').modal('hide');
+		  documents
+		  
+		  
+			$('#group-management-tab a[href="#discussions"]').tab('show');
+			
+		  
+		  if(!$("#discussion-content-input").val()) {
+		  
+		  $("#discussion-content-input").val('Just added a document. Take a look.');
+		  
+		  $('#add-discussion-btn').removeAttr('disabled');
+		  
+		  }
+		 
+			}
+      else {
+           
+           $('.no-document-selected-error').addClass("show-document-selected-error");
+		   
+      }
+    }
+  );
+}
+);
+
+
+
+</script>
+
+
+
+
+		
+		<style>
+		
+		
+			
+	
+
+.square-grid-item  {
+ width: calc( (100% - 40.1px) / 3 );
+ float: left;
+ margin-bottom: 20px;
+}
+
+@media screen and (min-width: 1440px) {
+
+.square-grid-item  {
+ width: calc( (100% - 60.1px) / 4 );
+ float: left;
+ margin-bottom: 20px;
+}
+
+}
+
+@media screen and (max-width:980px) {
+
+.square-grid-item  {
+ width: calc( (100% - 20.1px) / 2 );
+
+}
+}
+
+@media(max-width: 767px) {
+
+.square-grid-item  {
+ width: 100%;
+
+}
+
+}
+
+.square-grids {
+
+width: 100%;
+padding-top: 0px !important;
+
+}
+		
+		.big-long-btns {
+		
+		    margin-left: 10px;
+			margin-right: 10px;
+			padding-left: 60px !important;
+			padding-right: 60px !important;
+		
+		}
+		
+		.show-edit-project-error {
+		    padding-top: 10px;
+			padding-bottom: 10px;
+			text-align: center;
+			background: #F2DEDE;
+			border: 1px solid #EBCCD1;
+			color: #A94442;
+			margin-bottom: 0px;
+			
+			display: block !important;
+		
+		}
+		
+		.edit-project-error {
+		   display: none;
+		
+		}
+		
+		.btn-toolbar {
+
+margin-top: 0px !important;
+margin-bottom: 0px !important;
+padding-top: 5px;
+padding-bottom: 5px;
+background: #CFCCB9;
+padding-left: 5%;
+padding-right: 5%;
+
+
+
+}
+
+.new-editor-wrapper {
+
+	margin-bottom: 20px;
+
+}
+
+.btn-toolbar .btn {
+
+    background: transparent;
+    border: 0px;
+   
+    box-shadow: none;
+    color: #fff;
+
+}
+
+.modal-btn-holder a {
+
+display: inline-block;
+margin-left: 10px;
+margin-right: 10px;
+cursor: pointer;
+
+
+}
+
+.keywords-group {
+
+	margin-bottom: 0px !important;
+
+}
+
+#ui-datepicker-div {
+
+	z-index: 99999 !important;
+
+}
+
+.project-publication-tem-toolbar {
+
+	display: none;
+
+}
+
+.project-publication-tem-toolbar span {
+
+	font-size: 16px;
+	margin-left: 5px;
+	margin-right: 5px;
+
+}
+
+.project-publication-item:hover .project-publication-tem-toolbar {
+
+	display: inline-block !important;
+
+}
+		
+		</style>
+
+<body>
+
+<div id="create-session-modal" class="modal hide fade sign-modals" tabindex="-1" style="top: 96%" >
+
+	<form class="create-session-form" >
+	
+		<div class="box row-fluid">	
+			
+			<div class="step">
+			
+		
+			 <div class="modal-header">
+ 
+ <p>NEW SESSION</p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+ 
+ 
+  <div class="modal-body">
+   	
+		
+				
+						<div class="input-group user-field-group" >
+					
+					<label class="group-label">Session Title</label>
+					
+					<input class="form-control" name="sessiontitle" placeholder="Session Title">
+				
+				</div>
+				
+				<hr class="user-sep-line">
+				
+				
+								<div class="input-group user-field-group" >
+					
+					<label class="group-label">Session Type</label>
+					
+					<select name="sessiontype" class="form-control">
+						<option value="">SELECT</option>
+						<option value="Economics">Economics</option>
+						<option value="Natural Sciences">Natural Sciences</option>
+						
+						</select>
+				</div>
+				
+				<hr class="user-sep-line">
+				
+						<div class="input-group user-field-group" >
+					
+					<label class="group-label">Research Field</label>
+					
+					<select name="sessionfield" class="form-control">
+						<option value="">SELECT</option>
+						<option value="Economics">Economics</option>
+						<option value="Natural Sciences">Natural Sciences</option>
+						
+						</select>
+				</div>
+				
+					<hr class="user-sep-line">
+				
+					<div class="input-group user-field-group" >
+					
+					<label class="group-label" style="display: block !important; width: 100% !important">Session Time</label>
+					
+					<div class="session-time-holder">
+					
+					<div class="session-date-picker-holder">
+					<input name="sessionstarttime" type="date" placeholder="From" class="form-control session-from-date">
+					</div>
+					
+					<div class="session-date-picker-holder">
+					<input name="sessionendtime" type="date" placeholder="To" class="form-control session-to-date">
+					</div>
+					
+					<div class="session-time-zone-holder">
+					
+					<select>
+					<option value="GMT8">GMT +8</option>
+					<option value="GMT7">GMT +7</option>
+					</select>
+					
+					</div>
+					
+					</div>
+				</div>
+				
+				<hr class="user-sep-line">
+				
+				<div class="input-group user-field-group" >
+					
+					<label class="group-label">Invite Another Researcher to Host</label>
+					
+					<div class="invitees-invite-holder">
+					
+					<input class="form-control" name="projecttitle" placeholder="Search Researcher by Email or Phone">
+					<span class="lnr lnr-magnifier invitees-search-icon"></span>
+					
+					</div>
+					
+					<div class="session-invitees-list">
+					
+					<div class="session-invitee-item">Brahim Senhaji <span class="tag-delete lnr lnr-cross"></span></div>
+					
+					</div>
+					
+					<div class="member-search-results"></div>
+					
+					
+				
+				</div>
+				
+				
+				
+				<hr class="user-sep-line" style="margin-top: 0px">
+				
+				<label class="group-label">Description</label>
+				
+				<div class="input-group">
+			
+					<textarea placeholder="Session Description"></textarea>
+			
+				</div>
+				
+				<hr class="user-sep-line" style="margin-top: 0px">
+			
+				<label class="group-label">Keywords</label>
+		
+			<div class="input-group keywords-group " >
+				
+				<input type="text" class="create-project-keywords-input" id="session-keywords" placeholder="Type Project Keywords"/>
+				<a  id="add-interests-session-btn" class="new-small-button new-black-btn">Add</a>
+				<div class="session-keyword-list">
+				
+				</div>
+				</div>
+				
+				<hr class="user-sep-line">
+			
+				<div class="input-group project-radio-box">
+				
+					<label class="group-label">Privacy*</label>
+					
+					<div class="radio session-privacy-radio">
+						<div class="radio-section-holder">
+						<input id="session-Private" type="radio" name="session-privacy" value="Private" checked >
+						<label class="radio-label" for="session-Private">Private</label>
+						<span>Share Link: www.jijitang.com</span>
+						</div>
+						
+						<div class="radio-section-holder">
+						<input id="session-Public" type="radio" name="session-privacy" value="Public">
+						<label class="radio-label" for="session-Public">Public</label>
+						<span>Allow All Researchers to register</span>
+						</div>
+					</div>
+					
+				</div>
+			
+			</div>
+		
+		
+			</div>
+			
+			<div class="step">
+			
+			
+		
+		 <div class="modal-header">
+ 
+ <p>BASIC INFORMATION</p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+ 
+ 
+  <div class="modal-body">
+    	
+				<label class="group-label">Availability</label>
+				
+				<div class="radio session-privacy-radio">
+						<div class="radio-section-holder">
+						<input id="session-unlimited" type="radio" name="session-availability" value="Private" checked >
+						<label class="radio-label" for="session-unlimited">Unlimited</label>
+						<span>Anyone can register</span>
+						</div>
+						
+						<div class="radio-section-holder">
+						<input id="session-limited" type="radio" name="session-availability" value="Public">
+						<label class="radio-label" for="session-limited">Limited Spots</label>
+						<div class="input-group number-researchers-holder" >
+						<input type="number" value="1"/>
+						<p>How many researchers can join your group</p>
+						</div>
+						</div>
+					</div>
+			
+			
+			<hr class="user-sep-line">
+		
+			<label class="group-label">Fees & Registration</label>
+				
+				<div class="radio session-privacy-radio">
+						<div class="radio-section-holder">
+						<input id="session-free" type="radio" name="session-fees" value="Private" checked >
+						<label class="radio-label" for="session-free">Free Session</label>
+						<span></span>
+						</div>
+						
+						<div class="radio-section-holder">
+						<input id="session-paid" type="radio" name="session-fees" value="Public">
+						<label class="radio-label" for="session-paid">Paid Session</label>
+						<div class="input-group number-researchers-holder" >
+						<input type="text" value="1"/>
+						<p>Per Spot</p>
+						</div>
+						</div>
+						
+						<div class="radio-section-holder">
+						<input id="session-paid2" type="radio" name="session-fees" value="Public">
+						<label class="radio-label" for="session-paid2">Paid Session</label>
+						<div class="input-group number-researchers-holder" >
+						<input type="text" value="1"/>
+						<span style="font-size: 12px ">Per Session. The price/spot will vary depending on how many researchers register.</span>
+						<p></p>
+						</div>
+						</div>
+						
+					</div>
+				
+			<hr class="user-sep-line">
+			
+			
+		
+			<label class="group-label">Fees & Registration</label>
+			
+			<div class="session-time-registration-holder">
+					
+					<div class="session-date-picker-holder">
+					<input type="text" name="sessionregfrom" placeholder="From" class="form-control registration-from-date">
+					</div>
+					
+					<div class="session-date-picker-holder">
+					<input type="text" name="sessionregto" placeholder="To" class="form-control registration-to-date" style="border-right: 0px !important">
+					</div>
+			</div>
+			
+			<div class="radio session-privacy-radio" style="margin-top: 75px;">
+						<div class="radio-section-holder">
+						<input id="session-limited-attentance" type="radio" name="session-attendance" value="Private" checked >
+						<label class="radio-label" for="session-limited-attentance">Manually accept those you want attend your session</label>
+						<span></span>
+						</div>
+						
+						<div class="radio-section-holder">
+						<input id="session-open-attendance" type="radio" name="session-attendance" value="Public">
+						<label class="radio-label" for="session-open-attendance">Anyone can attend</label>
+						
+						</div>
+						
+						
+					</div>
+				
+		
+				
+			<hr class="user-sep-line">
+			
+  		
+		
+		<label class="group-label team-member-label">Prompt Code</label>
+		
+		
+		<div class="input-group number-researchers-holder" >
+		
+		<p>Prompt code for free attendance</p>
+		<input style="margin-left: 20px; width: 75px" type="text"/>
+		</div>
+
+	      </div>
+
+	  	
+			</div>
+			
+
+
+					 <div class="controls modal-btn-holder multi-step-btn-holder">
+					 
+					<button type="button" class="action next  new-black-back-btn big-long-btns multistep-btns regis-form-next" style="margin-left: 0px !important; margin-right: 0px !important">NEXT</button>
+					<button type="button" class="action btn-hot text-capitalize  submit  new-black-back-btn big-long-btns multistep-btns" style="margin-left: 0px !important; margin-right: 0px !important">CREATE SESSION</button>
+					
+			</div>
+			 		
+
+		</div>
+		
+	 
+	</form> 
+		  
+		  
+</div>
+
+<div id="close-group-modal" class="modal hide fade sign-modals" tabindex="-1">
+
+	 <div class="modal-header">
+ 
+ <p>CLOSE GROUP</p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+
+  <div class="modal-body zero-margin" >
+   
+	 <p class="member-cancel-actions-text">Are you sure you want to close this group ?</p>
+	
+  </div>
+  
+   <div class="controls modal-btn-holder invitation-modal-footer">
+					
+					<button data-dismiss="modal"  class="new-small-button new-black-btn big-long-btns   middle-button" >NO</button>
+					<button type="submit" class="new-small-button new-black-back-btn big-long-btns " >YES</button>
+					
+    
+  </div>
+  
+</div>
+
+
+<div id="leave-group-modal" class="modal hide fade sign-modals" tabindex="-1">
+
+	 <div class="modal-header">
+ 
+ <p>LEAVE GROUP</p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+
+  <div class="modal-body zero-margin" >
+   
+	 <p class="member-cancel-actions-text">Are you sure you want to leave this group ?</p>
+	
+  </div>
+  
+   <div class="controls modal-btn-holder invitation-modal-footer">
+					
+					<button data-dismiss="modal"  class="new-small-button new-black-btn big-long-btns   middle-button" >NO</button>
+					<button type="submit" class="new-small-button new-black-back-btn big-long-btns " >YES</button>
+					
+    
+  </div>
+  
+</div>
+
+<!-- Add member pop us -->
+
+<div id="add-document-to-collection-popup" class="modal hide fade sign-modals" tabindex="-1" style="top: 54%" >
+
+		<div class="box row-fluid">	
+
+			 <div class="modal-header">
+ 
+ <p>ADD DOCUMENTS TO DISCUSSION</p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+ 
+<div class="modal-body" style="margin-top: 0px !important">
+
+<div class="no-document-selected-error" >Please Select a Document to Attach</div>
+		
+	<!--	<div class="empty-add-top-collection">
+		
+			You have not created any articles yet.
+			
+			<a >+ Write Article</a>
+		
+		</div> -->
+		
+	
+		
+		     <div id="users">
+			 
+			
+ 
+ <div class="full-width-search-holder add-to-collection-search-input">
+ <input class="search" placeholder="Search Documents" />
+ <button><i class="lnr lnr-magnifier"></i></button>
+  </div>
+
+  <div class="list add-top-collection-holder-select">
+  
+							<div class="add-top-collection-row-select">
+								<input id="document1" type="radio" name="select-document-discussion">
+								<label class="radio-label" for="document1"></label>
+								<img src="img/profile1.jpg" />
+								<p class="to-submit-document-title name">Moving to music is an essential human pleasure particularly related to musical groove</p>
+								<span class="to-submit-document-author hidden-value">brahim senhaji</span>
+								<span class="to-submit-document-category hidden-value">geology</span>
+								<span class="to-submit-document-publish-date hidden-value">12/01/2015</span>
+								
+							</div>
+							
+							<div class="add-top-collection-row-select">
+								<input id="document2" type="radio" name="select-document-discussion">
+								<label class="radio-label" for="document2"></label>
+								<img src="img/profile2.jpg" />
+								<p class="to-submit-document-title name">This is a second test article title</p>
+								<span class="to-submit-document-author hidden-value">Albert Einstein</span>
+								<span class="to-submit-document-category hidden-value">Physics</span>
+								<span class="to-submit-document-publish-date hidden-value">12/01/2015</span>
+								
+							</div>
+  </div>
+    
+</div>
+
+		<button id="submit-document-to-discussion-btn" class="new-small-button new-black-btn big-long-btns full-width   middle-button" >ADD</button>
+		
+		</div>
+	
+				
+		</div>
+</div> 
+
+
+<div id="Add-team-member-search" class="modal hide fade sign-modals" tabindex="-1">
+
+	 <div class="modal-header">
+ 
+ <p>Search for team members</p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+ 
+
+ 
+  <div class="modal-body zero-margin" >
+   
+	 <p class="bold-text">Find team members on Jijitang</p>
+		
+		<div class="form-group">
+			<div class="controls">
+			    <div class="input-group search-field-holder">
+					<input type="text" class="form-control"  placeholder="Search by Email or Phone number">
+					<button class="lnr lnr-magnifier"></button>
+				</div>
+			</div>
+		</div>
+
+	
+    <div class="member-search-results"></div>
+	
+          
+		
+  </div>
+  
+</div>
+
+<div id="Add-team-member" class="modal hide fade sign-modals" tabindex="-1" style=" top: 77%">
+
+	 <div class="modal-header">
+ 
+ <p>Add Team Member</p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+ 
+ <div id="add-member-alert-validation" class="add-member-alert full-width"> Member Email and Role are both required</div>
+ 
+  <div class="modal-body zero-margin" >
+   
+	 
+		
+		<div class="form-group">
+			<div class="controls">
+			    <div class="input-group">
+					<input type="text" class="form-control" id="invitee-email" name="name" placeholder="Email">
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="form-group">
+			<div class="controls">
+			    <div class="input-group">
+					<input type="text" class="form-control" id="invitee-role" name="emailregi" placeholder="Role">
+				</div>
+			</div>	
+		</div>
+		
+		
+        
+        <div class="form-group ">
+			<div class="controls">
+			    <div class="input-group">
+					<textarea class="form-control" id="invitationmessage" name="invitationmessage" placeholder="Message Optional"></textarea>
+				</div>
+			</div>
+		</div>
+		
+		<hr class="user-sep-line">
+		
+		<label class="group-label team-member-label">Type of Member</label>
+		
+		<div class="radio team-member-radio">
+						<input id="Private" type="radio" name="privacy" value="Admin" checked="">
+						<label class="radio-label" for="Private">Admin</label>
+						<p>Can edit basic information, delete project and invite members.</p>
+						<input id="Public" type="radio" name="privacy" value="Collaborator">
+						<label class="radio-label" for="Public">Collaborator</label>
+						<p>can follow and contribute to discussions and add publications</p>
+		</div>
+    
+	
+          
+		
+  </div>
+  
+  
+   <div class="controls modal-btn-holder invitation-modal-footer">
+					
+					<button data-dismiss="modal"  class="new-small-button new-black-btn big-long-btns   middle-button" >CANCEL</button>
+					<button type="submit" id="send-invitation-action" class="new-small-button new-black-back-btn big-long-btns " >SEND INVITATION</button>
+					
+    
+			</div>
+</div>
+
+<!-- Edit project information pop up -->
+
+<div id="edit-project-modal-first-step" class="modal hide fade sign-modals" tabindex="-1" style="top: 54%" >
+
+	
+	
+		<div class="box row-fluid">	
+			
+			
+			
+		
+			 <div class="modal-header">
+ 
+ <p>EDIT GROUP</p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+ 
+ <div class="edit-project-error">Project title, field, type, dates and privacy are all REQUIRED.</div>
+ 
+  <div class="modal-body">
+  
+ 
+		
+			    <label class="group-label">Group Name*</label>
+			
+				<div class="input-group">
+			
+					<input class="form-control" id="project-title" name="projecttitle" placeholder="Title" value="Minerals From Tropical Rainforests">
+				</div>
+				
+				<label class="group-label">Research Field*</label>
+				
+				<div class="input-group edit-field-input-group" >
+					
+					
+					
+					<select id="project-field" class="form-control user-form-select">
+						<option value="">SELECT</option>
+						<option value="Economics" selected>Economics</option>
+						<option value="Natural Sciences">Natural Sciences</option>
+						
+						</select>
+				</div>
+				
+				<hr class="user-sep-line">
+				
+				<label class="group-label">Group Type*</label>
+				<div class="input-group edit-field-input-group" >
+				
+					<select id="project-type" class="form-control user-form-select">
+						<option value="">SELECT</option>
+						<option value="Economics">Research</option>
+						<option value="Natural Sciences" selected>Research</option>
+						
+						</select>
+				</div>
+				
+				
+				<hr class="user-sep-line" style="margin-top: 0px">
+        
+				<div class="input-group project-radio-box">
+				
+					<label class="group-label">Privacy*</label>
+					
+					<div class="radio">
+						<input id="Privatett" type="radio" name="privacytt" value="Private" checked >
+						<label class="radio-label" for="Privatett">Private</label>
+						<input id="Publictt" type="radio" name="privacytt" value="Public">
+						<label class="radio-label" for="Publictt">Public</label>
+					</div>
+			
+				</div>
+				
+				<hr class="user-sep-line">
+		
+		<label class="group-label team-member-label">Type of Members</label>
+		
+		<div class="radio team-member-radio">
+						<input id="Private-group" type="radio" name="group-privacy" value="Admin" checked="">
+						<label class="radio-label" for="Private-group">Other researchers cannot apply to join your group</label>
+						
+						<input id="Public-group" type="radio" name="group-privacy" value="Collaborator">
+						<label class="radio-label" for="Public-group">Other researchers can apply to join your group</label>
+						
+		</div>
+	</div>
+	
+					 <div class="controls modal-btn-holder">
+					 
+					<button type="button"  class="new-small-button new-black-btn big-long-btns middle-button" data-dismiss="modal">CANCEL</button>
+					<button type="button" id="submit-edit-project-form-1" class="new-small-button new-black-back-btn big-long-btns middle-button"  >SUBMIT</button>
+		
+			</div>
+		</div>
+</div> 
+
+<!-- Edit project description and keywords pop up -->
+
+<div id="edit-project-modal-second-step" class="modal hide fade sign-modals" tabindex="-1" style="top: 54%" >
+
+	<form class="form" action="project-management.html" >
+	
+		<div class="box row-fluid">	
+
+		 <div class="modal-header">
+ 
+ <p>EDIT GROUP</p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+ 
+ 
+  <div class="modal-body">
+    	
+		
+				<label class="group-label">Description</label>
+			
+				<div class="input-group" >
+			
+					<textarea placeholder="Group Description">by nutrient signalling remains enigmatic in photosynthetic plants by nutrient signalling remains enigmatic in photosynthetic plants by nutrient signalling remains enigmatic in photosynthetic plants</textarea>
+			
+				</div>
+		
+			<hr class="user-sep-line">
+			
+  			
+			<label class="group-label">Keywords</label>
+		
+			<div class="input-group keywords-group " >
+				
+				<input type="text" class="create-project-keywords-input" id="project-keywords" placeholder="Type Project Keywords"/>
+				<a  id="add-interests-btn" class="new-small-button new-black-btn">Add</a>
+				<div class="project-keyword-list">
+				
+				<div class="editor-all-tags"><span class="tag-text">Science and technology</span><div class="tag-delete lnr lnr-cross"></div></div>
+				<div class="editor-all-tags"><span class="tag-text">New concepts of reerach</span><div class="tag-delete lnr lnr-cross"></div></div>
+				<div class="editor-all-tags"><span class="tag-text">Physics</span><div class="tag-delete lnr lnr-cross"></div></div>
+				
+				</div>
+				</div>
+				
+	      </div>
+
+			 <div class="controls modal-btn-holder">
+				
+				
+				<button class="new-small-button new-black-btn big-long-btns   middle-button" data-dismiss="modal" >CANCEL</button>
+				<button type="submit" class="new-small-button new-black-back-btn big-long-btns   middle-button" >SUBMIT</button>
+					
+			</div>
+
+		</div>
+		
+	 
+	</form> 
+		  
+		  
+</div>
+
+<!-- Share Pop up -->
+
+<div id="project-share-modal" class="modal hide fade sign-modals" tabindex="-1" style="top: 54%" >
+
+	
+	
+		<div class="box row-fluid">	
+			
+		
+			
+			
+		
+		 <div class="modal-header">
+ 
+ <p>SHARE PROJECT</p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+ 
+		<div class="modal-body">
+		
+		<div class="input-group">
+			
+					<input class="form-control" name="projecttitle" placeholder="Share Link" >
+		
+		</div>
+		
+		<p class="pub-modal-header" style="padding-top: 0px; padding-bottom: 10px;">anyone with this link will be able to view this project</p>
+		
+		<button class="new-small-button new-black-btn big-long-btns full-width   middle-button" >Copy Link</button>
+		
+		<hr class="user-sep-line">
+		
+		<p class="pub-modal-header" style="padding-top: 0px; padding-bottom: 10px;">Or Share to </p>
+
+		
+		<div class="share-modal-social-icons">
+		<a class="fa fa-facebook"></a>
+		<a class="fa fa-twitter"></a>
+		<a class="fa fa-linkedin"></a>
+		<a class="fa fa-weibo"></a>
+		
+		</div>
+		
+		</div>
+ 
+
+			
+
+		</div>
+  
+</div>
+
+
+
+
+<div class="header-wrapper">
+	<header>
+
+
+	</header>
+</div>
+
+  <div class="main-page-wrapper">
+    
+    
+ 		
+        
+        <div class="main-page-content" >
+		
+		
+        
+		<div class="secondary-sub-navigation project-discussion-main-nav">
+
+	<div class="top-nav-author-info project-discussion-right-nav">
+		
+		<a  href="group-view.html"><b class="hidden-phone">View Public Group</b><b class="hidden-desktop hidden-tablet">View</b></a>
+		
+		
+		
+	</div>
+	
+	<div class="top-nav-right-icons">
+	
+	<a class="add-team-member-btn fa fa-user  top-bar-right-normal-btns"><span>Invite</span></a>
+	<a id="share-modal-btn" class="fa fa-share-square-o top-bar-right-normal-btns article-share-open"><span>Share</span></a>
+	
+	
+		
+		
+	
+	</div>
+	
+
+
+</div>
+        
+        		
+				<div class="dashboard-wrapper">
+                
+                <div class="dashbord-content-left hidden-tablet hidden-phone">
+                
+                	
+                
+                        
+                        
+                            <div class="dashbord-content-left-article project-info-left-section">
+							
+								<div id="project-back-preview" class="left-project-wrap" style="background: url(img/index-back2.jpg)  no-repeat center center; background-size: cover;"></div>
+								
+								<div class="my-image-upload back-image-upload">
+										<label for="change-project-background" id="project-back-btn" class="fa fa-camera">
+										</label>
+										<input id="change-project-background" type="file"/>
+								</div>
+                        
+							<button id="edit-project-first-step-btn" class="fa fa-pencil-square-o left-section-edit-btn"></button>
+							<p class="project-left-title">
+								Minerals From Tropical Rainforests
+							</p>
+							
+							<p class="project-left-icons">
+							
+									<a><i class="lnr lnr-user"></i><span>112</span></a>
+									<a><i class="fa fa-comment-o"></i><span>0</span></a>
+									<a><i class="lnr lnr-eye"></i><span>65</span></a>
+									<a><i class="lnr lnr-exit-up"></i><span>888</span></a>
+							
+							</p>
+                
+                        </div>
+						
+						
+						
+						<div class="dash-left-sec-div-footer project-left-footer"><span>SCIENCE</span><span>Research</span></div> 
+						
+						   
+						   <div class="project-application-notification"><a>1 NEW APPLICATION</a></div>
+						   
+						   
+						   <div class="dashbord-content-left-article project-left-profiles">
+                        
+                          <div>
+                            
+                            	<span> Team Members</span>
+								<a href="member-management.html"  class="fa fa-pencil-square-o left-section-edit-btn"></a>
+								<a style="margin-right: 10px; cursor: pointer" class="fa fa-plus left-section-edit-btn add-team-member-btn"></a>
+
+																
+                            </div>
+                            
+                            <!-- In case the user enters for the first time -->
+                            
+                            <!--<div class="first-time-enter">
+                            
+                            <div><span>+</span></div><p>You don't have any liked articles,<a>Find some interesting articles</a></p>
+                            
+                            </div>-->
+							
+							<div class="profile-row"><a><img src="img/profile1.jpg" /><p>Brahim Senhaji</p></a><span>Chemist</span></div>
+							<div class="profile-row"><a><img src="img/profile2.jpg" /><p>Albert Einstein</p></a><span>Biologist</span></div>
+							<div class="profile-row"><a><img src="img/profile3.jpg" /><p>Mariuz Pudzianovski</p></a><span>Bodybuilder</span></div>
+							<div class="profile-row"><a><img src="img/profile4.jpg" /><p>Alan Turin</p></a><span>Scientist</span></div>
+						
+							</div>
+							
+							<div class="dash-left-sec-div-footer"><a>SEE ALL</a></div> 
+							
+							
+							
+							
+							 <div class="dashbord-content-left-article project-left-description">
+							 
+							
+							 
+                        
+                           <div class="lef-div-with-edit-btn" >
+                            
+                            	<span class="left-header-with-edit-btn">Desciption</span>
+								 
+								 <button class="fa fa-pencil-square-o edit-project-second-step-btn left-section-edit-btn"></button>
+                         
+                            </div>
+                            
+                            <!-- In case the user enters for the first time -->
+                            
+                            <!--<div class="first-time-enter">
+                            
+                            <div><span>+</span></div><p>You don't have any liked articles,<a>Find some interesting articles</a></p>
+                            
+                            </div>-->
+                            
+                        
+                            <p>by nutrient signalling remains enigmatic in photosynthetic plants by nutrient signalling remains enigmatic in photosynthetic plants by nutrient signalling remains enigmatic in photosynthetic plants</p>
+                            <a>Read More</a>
+                            
+                        
+                        </div>
+						
+						
+						 <div class="dashbord-content-left-article">
+                        
+                          <div class="lef-div-with-edit-btn">
+                            
+                            	<span class="left-header-with-edit-btn"> Keywords</span>
+								<button  class="fa fa-pencil-square-o edit-project-second-step-btn left-section-edit-btn"></button>
+
+                         
+                            </div>
+                            
+                            <!-- In case the user enters for the first time -->
+                            
+                            <!--<div class="first-time-enter">
+                            
+                            <div><span>+</span></div><p>You don't have any liked articles,<a>Find some interesting articles</a></p>
+                            
+                            </div>-->
+                        
+						
+							<a class="tag-article">Biology</a>
+							<a class="tag-article">Chemistery</a>
+							<a class="tag-article">IT</a>
+							<a class="tag-article">Computer Science</a>
+							<a class="tag-article">History</a>
+							<a class="tag-article">Javascript</a>
+							<a class="tag-article">Biology</a>
+							<a class="tag-article">Chemistery</a>
+							<a class="tag-article">IT</a>
+							<a class="tag-article">Computer Science</a>
+							<a class="tag-article">History</a>
+							<a class="tag-article">Javascript</a>
+						
+			
+						</div>
+							
+						<div class="dash-left-sec-div-footer"><a>SEE ALL</a></div> 
+					
+					
+						<div id="leave-group-btn" class="leave-group"><a>LEAVE GROUP</a></div>
+						<div id="close-group-btn" class=" close-group"><a>CLOSE GROUP</a></div>
+                
+           
+                </div>
+                
+                <div class="dashbord-content-right" >
+				
+				<div class="group-session-banner-holder" style="background: url(img/myback.jpg); background-size: cover">
+				<div class="group-session-banner-holder-footer-layer"></div>
+				<div id="countdown" data-wow-delay=".3s" data-date="SEP 22, 2016 06:00:00"></div>
+				<div class="group-session-banner-holder-footer">
+				<p>This is Session Title</p>
+				<span>15 People are attenting</span>
+				</div>
+				
+				</div>
+				
+				   <div  class="groups-tabs-holder" >
+         
+					<ul id="group-management-tab" class="nav nav-tabs"  role="tablist">
+						<li role="presentation" class="active"><a href="#discussions" aria-controls="home" role="tab" data-toggle="tab">Discussions</a></li>
+						<li role="presentation" class=""><a href="#documents" aria-controls="profile" role="tab" data-toggle="tab">Documents</a></li>
+						<li role="presentation" class=""><a href="#sessions" aria-controls="sessions" role="tab" data-toggle="tab">Sessions</a></li>
+					</ul>
+  
+				</div>
+				
+				<div class="dashbord-content-right-inner" >
+				
+				<div class="tab-content">
+				
+					<div class=" tab-pane active project-discussion-discussion-container" id="discussions">
+					
+					<div class="discussion-top-holder">
+					
+						<div class="start-discussion-holder">
+							
+							<div class="discussions-profile-holder">
+							<a><img src="img/brahim.png" /></a>
+							</div>
+							
+							<div class="discussions-text-holder">
+							
+							<textarea id="discussion-content-input" class="discussion-post-validation" placeholder="Write your discussion"></textarea>
+							
+								<div class="group-attachement-wrapper"></div>
+							
+							<button id="add-discussion-btn" class="black-wide-btn right-float-btn discussion-box-btn" disabled="disabled">SEND MESSAGE</button>
+							<button id="open-session-popup" class="set-up-session-group-btn discussion-box-btn">SET UP SESSION</button>
+							<button class="add-document-group-btn discussion-box-btn">ADD DOCUMENT</button>
+							
+							</div>
+						
+						</div>
+					
+					</div>
+						
+						<div class="discussion-list">
+						
+							<div class="discussion-post">
+							
+								<div class="discussion-post-header">
+								
+									<div class="discussion-post-meta">
+
+										<a class="discussion-post-picture"><img src="img/profile1.jpg" /></a>
+										<p class="discussion-post-author"><a>Brahim Senhaji</p></a>
+										<p class="discussion-post-time">September 28 | 12:33 A.M</p>
+										
+										
+									</div>
+									
+									
+									
+								
+								</div>
+								<div class="discussion-post-content">
+								
+									
+									<p class="discussion-post-text">
+									
+									positive affect in music more broadly, but the function of syncopation in eliciting pleasure and body-movement in groove is unknown. Here we report results from a web-based survey which investigated the relationship between syncopation and ratings of wanting to move and experienced pleasure. Participants heard funk drum-breaks with varying degrees of syncopation and audio entropy, and rated the extent to which the drum-breaks made them want to move and how much pleasure they experienced. While entropy was found to be a poor predictor of wanting to move and pleasure, the results showed that medium degrees of syncopation elicited the most desire to move and the most pleasure
+									
+									</p>
+									
+									<div class="discussion-post-content-footer">
+									
+										<span class="discussion-comment-number"> 12 Replies</span> . <span class="discussion-comment-reply-btn discussion-show-replies"></span>
+										
+									
+									</div>
+									
+										<div class="group-attachement-holder group-attachement-on-discussion">
+												
+												<a href="new-article-view.html">
+												<img class="group-attachement-img" src="img/profile1.jpg" />
+												<p class="group-attachement-title"> Here goes our article title</p>
+												<p class="group-attachement-meta" ><span>Brahim Senhaji</span><span>Geology</span><span>12 September 2012</span></p>
+												</a>
+							
+										</div>
+									
+									<div class="discussion-comments-holder hidden-discussion-comment-section">
+									
+										<div class="discussion-comment-textarea">
+										
+											<textarea class="add-discussion-comment-textarea" placeholder="Share your thoughts on the discussion"></textarea>
+											<button class="black-wide-btn right-float-btn add-discussion-comment-btn">SEND</button>
+										
+										</div>
+										
+										<div class="discussion-comment-list">
+										
+											<div class="discussion-comment-row">
+											
+												<a><img src="img/brahim.png" /></a>
+												<p class="discussion-comment-meta"><a class="discussion-comment-name">Brahim Senhaji</a><span class="discussion-comment-date">September 18 | 13:54 A.M</span></p>
+												<p class="discussion-comment-text">Nice article I would like to learn more how did you get to these concultions</p>
+												<div class="discussion-comment-edit-btns">
+												
+													<button class="black-wide-btn right-float-btn discussion-comment-edit-save" >SAVE</button>
+													<button class="red-wide-btn right-float-btn discussion-comment-edit-delete">DELETE</button>
+												
+												</div>
+												<a class="discussion-comment-edit">Edit</a>
+											
+											
+											
+											</div>
+										
+											
+											<div class="discussion-comment-row">
+											
+												<a><img src="img/brahim.png" /></a>
+												<p class="discussion-comment-meta"><a class="discussion-comment-name">Brahim Senhaji</a><span class="discussion-comment-date">September 18 | 13:54 A.M</span></p>
+												<p class="discussion-comment-text">Nice article I would like to learn more how did you get to these concultions</p>
+												
+											
+											</div>
+											
+											<div class="discussion-comment-row">
+											
+												<a><img src="img/brahim.png" /></a>
+												<p class="discussion-comment-meta"><a class="discussion-comment-name">Brahim Senhaji</a><span class="discussion-comment-date">September 18 | 13:54 A.M</span></p>
+												<p class="discussion-comment-text">Nice article I would like to learn more how did you get to these concultions</p>
+												
+											
+											</div>
+											
+											<div class="discussion-comment-row">
+											
+												<a><img src="img/brahim.png" /></a>
+												<p class="discussion-comment-meta"><a class="discussion-comment-name">Brahim Senhaji</a><span class="discussion-comment-date">September 18 | 13:54 A.M</span></p>
+												<p class="discussion-comment-text">Nice article I would like to learn more how did you get to these concultions</p>
+											
+											
+											</div>
+										<div class="discussion-see-more-comments">See More Replies</div>
+										
+										</div>
+									
+									
+									</div>
+									
+								</div>
+							
+							
+							</div>
+							
+							<div class="discussion-post">
+							
+								<div class="discussion-post-header">
+								
+									<div class="discussion-post-meta">
+
+										<a class="discussion-post-picture"><img src="img/profile1.jpg" /></a>
+										<p class="discussion-post-author"><a>Brahim Senhaji</p></a>
+										<p class="discussion-post-time">September 28 | 12:33 A.M</p>
+										
+										
+									</div>
+									
+									
+									
+								
+								</div>
+								
+								
+								<div class="discussion-post-content">
+								
+									
+									<p class="discussion-post-text">
+									
+									positive affect in music more broadly, but the function of syncopation in eliciting pleasure and body-movement in groove is unknown. Here we report results from a web-based survey which investigated the relationship between syncopation and ratings of wanting to move and experienced pleasure. Participants heard funk drum-breaks with varying degrees of syncopation and audio entropy, and rated the extent to which the drum-breaks made them want to move and how much pleasure they experienced. While entropy was found to be a poor predictor of wanting to move and pleasure, the results showed that medium degrees of syncopation elicited the most desire to move and the most pleasure
+									
+									</p>
+									
+									<div class="discussion-post-content-footer">
+									
+										<span class="discussion-comment-number"> 12 Replies</span> . <span class="discussion-comment-reply-btn discussion-show-replies"></span>
+										
+									
+									</div>
+									
+									<div class="discussion-comments-holder hidden-discussion-comment-section">
+									
+										<div class="discussion-comment-textarea">
+										
+											<textarea class="add-discussion-comment-textarea" placeholder="Share your thoughts on the discussion"></textarea>
+											<button class="black-wide-btn right-float-btn add-discussion-comment-btn">SEND</button>
+										
+										</div>
+										
+										<div class="discussion-comment-list">
+										
+											<div class="discussion-comment-row">
+											
+												<a><img src="img/brahim.png" /></a>
+												<p class="discussion-comment-meta"><a class="discussion-comment-name">Brahim Senhaji</a><span class="discussion-comment-date">September 18 | 13:54 A.M</span></p>
+												<p class="discussion-comment-text">Nice article I would like to learn more how did you get to these concultions</p>
+												<div class="discussion-comment-edit-btns">
+												
+													<button class="black-wide-btn right-float-btn discussion-comment-edit-save" >SAVE</button>
+													<button class="red-wide-btn right-float-btn discussion-comment-edit-delete">DELETE</button>
+												
+												</div>
+												<a class="discussion-comment-edit">Edit</a>
+											
+											</div>
+											
+											<div class="discussion-comment-row">
+											
+												<a><img src="img/brahim.png" /></a>
+												<p class="discussion-comment-meta"><a class="discussion-comment-name">Brahim Senhaji</a><span class="discussion-comment-date">September 18 | 13:54 A.M</span></p>
+												<p class="discussion-comment-text">Nice article I would like to learn more how did you get to these concultions</p>
+												
+											
+											</div>
+											
+											<div class="discussion-comment-row">
+											
+												<a><img src="img/brahim.png" /></a>
+												<p class="discussion-comment-meta"><a class="discussion-comment-name">Brahim Senhaji</a><span class="discussion-comment-date">September 18 | 13:54 A.M</span></p>
+												<p class="discussion-comment-text">Nice article I would like to learn more how did you get to these concultions</p>
+												
+											
+											</div>
+											
+											<div class="discussion-comment-row">
+											
+												<a><img src="img/brahim.png" /></a>
+												<p class="discussion-comment-meta"><a class="discussion-comment-name">Brahim Senhaji</a><span class="discussion-comment-date">September 18 | 13:54 A.M</span></p>
+												<p class="discussion-comment-text">Nice article I would like to learn more how did you get to these concultions</p>
+											
+											
+											</div>
+										<div class="discussion-see-more-comments">See More Replies</div>
+										
+										</div>
+									
+									
+									</div>
+									
+								</div>
+							
+							
+							</div>
+							
+							 <div class="load-more-button" style="margin-top: 0px">LOAD MORE</div>
+						
+						</div>
+					
+					</div>
+					
+					<div class="tab-pane" id="documents">
+					
+					  <div id="users">
+ 
+ <div style="height: auto; overflow: hidden">
+ <div class="full-width-search-holder add-document-search-input">
+ <input class="search" placeholder="Search Documents" />
+ <button><i class="lnr lnr-magnifier"></i></button>
+  </div>
+ <div class="add-document-holder add-document-group-btn"><button>+ <span class="hidden-phone">ADD DOCUMENT</span></button></div>
+ </div>
+
+  <div class="list square-grids article-columns">
+    <div class="square-grid-item my-document-grid-item">
+	<div class="document-paper-curl"></div>
+	  <a href="#" class="my-document-grid-item-inner">
+	  
+      
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br>
+	  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, <br>
+	  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+	  </a>
+	  <div class="my-document-grid-item-footer">
+	  
+		<p><span class="lnr lnr-lock"></span><span>private</span><span  class="name">why the blue whales dont make sound ?</span></p>
+	  
+	  </div>
+    </div>
+    
+	<div class="square-grid-item my-document-grid-item">
+	<div class="document-paper-curl"></div>
+	<a href="#" class="my-document-grid-item-inner">
+	 
+      
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br>
+	  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, <br>
+	  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+	  </a>
+	  <div class="my-document-grid-item-footer">
+	  
+		<p><span class="lnr lnr-lock"></span><span>private</span><span  class="name">why the blue whales dont make sound ?</span></p>
+	  
+	  </div>
+	 </div>
+    
+	<div class="square-grid-item my-document-grid-item">
+	<div class="document-paper-curl"></div>
+	 <a href="#" class="my-document-grid-item-inner">
+	 
+      
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br>
+	  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, <br>
+	  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br>
+	  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, <br>
+	  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+	  </a>
+	  <div class="my-document-grid-item-footer">
+	  
+		<p><span class="lnr lnr-lock"></span><span>private</span><span  class="name">why the blue whales dont make sound whales dont make sound ?</span></p>
+	  
+	  </div>
+	</div>
+    
+	<div class="square-grid-item my-document-grid-item">
+	  <div class="document-paper-curl"></div>
+	 <a href="#" class="my-document-grid-item-inner">
+	
+      
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br>
+	  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, <br>
+	  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+	  </a>
+	  <div class="my-document-grid-item-footer">
+	  
+		<p><span class="lnr lnr-lock"></span><span>private</span><span  class="name">why the blue whales dont make sound ?</span></p>
+	  
+	  </div>
+    </div>
+	
+	
+  </div>
+ <div class="load-more-button" style="margin-bottom: 15px; margin-top: 0px">LOAD MORE</div>
+ 
+  
+</div>
+					
+					
+					</div>
+					
+					<div class=" tab-pane " id="sessions">
+					
+					<div id="users-2">
+					
+					 <div style="height: auto; overflow: hidden">
+ <div class="full-width-search-holder add-document-search-input">
+ <input class="search" placeholder="Search Sessions" />
+ <button><i class="lnr lnr-magnifier"></i></button>
+  </div>
+ <div class="add-document-holder add-document-group-btn" id="open-session-popup"><button>+ <span class="hidden-phone">ADD SESSION</span></button></div>
+ </div>
+					
+					<div class="list square-grids-session article-columns">
+							
+					<div class="session-grid-item square-grid-item ">
+						
+							<div class="session-update-header session-update-live">
+							
+								<span class="session-update-status">Live<span></span></span>
+								
+								<div class="fa fa-play session-update-status-content "></div>
+							
+							</div>
+							
+							<div class="session-update-title-holder">
+							
+								<a class="session-update-title">This is Session Title Chosen by the user</a>
+								
+								<a class="session-update-creator"><img src="img/profile2.jpg" />Donald Trump</a>
+							
+							</div>
+							
+							<div class="session-update-meta">
+							
+							<p class="session-update-types">
+							
+								<span>Geology</span>
+								<span>Class</span>
+								
+							</p>
+							
+							<p class="session-update-schedule">
+							
+								<span>14 Sep 2016</span>
+								<span>4 P.M - 5 P.M</span>
+							
+							</p>
+							
+							<p class="session-update-price-spots">
+							
+								<span>150 RMB</span>
+								<span>100 Spots</span>
+								<span class="session-update-spots-left">56 left</span>
+							
+							</p>
+							
+							<a class="session-update-broadcast">VIEW BROADCAST</a>
+							
+							</div>
+							
+							<div class="session-update-footer">
+							
+							<span>44 Registered</span>
+							
+							<span>10 Saved</span>
+							
+							<span>22 Feedback</span>
+							
+							</div>
+						
+						</div>
+						
+						<div class="session-grid-item square-grid-item ">
+						
+							<div class="session-update-header session-update-upcoming">
+							
+								<span class="session-update-status">Upcoming <span></span></span>
+								
+								
+								<div class="session-countdown session-update-status-content" data-wow-delay=".3s" data-date="OCT 22, 2016 06:00:00"></div>
+							
+							</div>
+							
+							<div class="session-update-title-holder">
+							
+								<a class="session-update-title">This is Session Title Chosen by the user</a>
+								
+								<a class="session-update-creator"><img src="img/profile1.jpg" /> Donald Trump</a>
+							
+							</div>
+							
+									<div class="session-update-meta">
+							
+							<p class="session-update-types">
+							
+								<span>Geology</span>
+								<span>Class</span>
+								
+							</p>
+							
+							<p class="session-update-schedule">
+							
+								<span>14 Sep 2016</span>
+								<span>4 P.M - 5 P.M</span>
+							
+							</p>
+							
+							<p class="session-update-price-spots">
+							
+								<span>150 RMB</span>
+								<span>100 Spots</span>
+								<span class="session-update-spots-left">56 left</span>
+							
+							</p>
+							
+							<a class="session-update-register">REGISTER</a>
+							
+							</div>
+							
+							<div class="session-update-footer">
+							
+							<span>44 Registered</span>
+							
+							<span>10 Saved</span>
+							
+							<span>22 Feedback</span>
+							
+							</div>
+						
+						</div>
+						
+							<div class="session-grid-item square-grid-item ">
+						
+							<div class="session-update-header session-update-closed">
+							
+								<span class="session-update-status">Closed <span></span></span>
+								
+								<div class="session-update-status-content">APRIL 7 / 8:00 P.M -9:00 P.M</div>
+							
+							</div>
+							
+							<div class="session-update-title-holder">
+							
+								<a class="session-update-title">This is Session Title Chosen by the user</a>
+								
+								<a class="session-update-creator"><img src="img/profile3.jpg" /> Donald Trump</a>
+							
+							</div>
+							
+							<div class="session-update-meta">
+							
+							<p class="session-update-types">
+							
+								<span>Geology</span>
+								<span>Class</span>
+								
+							</p>
+							
+							<p class="session-update-schedule">
+							
+								<span>14 Sep 2016</span>
+								<span>4 P.M - 5 P.M</span>
+							
+							</p>
+							
+						
+							
+							
+							
+							</div>
+							
+							<div class="session-update-footer">
+							
+							<span>44 Registered</span>
+							
+							<span>10 Saved</span>
+							
+							<span>22 Feedback</span>
+							
+							</div>
+						
+						</div>
+						
+						</div>
+					
+					</div>
+					
+					</div>
+					
+					</div>
+				
+					
+				
+                
+
+
+              </div>
+                </div>
+                            
+                            
+                </div>            
+                            
+                            
+                </div>
+    
+                       
+                         
+                
+                
+                </div>
+   
+
+      
+   
+        <footer></footer>
+   
+
+      
+   
+        <script>
+
+ $(document).ready(function() {
+var options = {
+  valueNames: [ 'name' ]
+};
+
+var userList = new List('users', options);
+
+});
+
+$(document).ready(function() {
+var options = {
+  valueNames: [ 'session-update-title' ]
+};
+
+var userList = new List('users-2', options);
+
+});
+
+</script>
+    
+    
+   
+
+<script>
+
+$( "header" ).load( "header-jijitang.html" ); 
+$( "footer" ).load( "footer.html" );
+//$( ".member-search-results" ).load( "parts/group-session-invitation-form.html" );
+
+
+  
+
+</script>
+
+<script src="js/myjavascript.js"></script>
+<script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+<script src="js/masonry-scripts-groups.js"></script>
+<script src="js/list.js"></script>
+
+<script type="text/javascript">
+if ($('#countdown').length) { 
+			$('#countdown').countdown({
+				render: function(data) {
+					if (data.years >= 1) {
+						var $days =	(data.years*365)+data.days;
+					} else {
+						var $days = data.days;
+					}
+				  $(this.el).html(
+					  '<div class="day">' + this.leadingZeros($days) + ' <span>Days</span></div>'+
+					  '<div class="hour">' + this.leadingZeros(data.hours, 2) + ' <span>Hours</span></div>'+
+					  '<div class="min">' + this.leadingZeros(data.min, 2) + ' <span>Minutes</span></div>'+
+					  '<div class="sec">' + this.leadingZeros(data.sec, 2) + ' <span>Seconds</span></div>'
+				  );
+				}
+			});
+		}
+		
+if ($('.session-countdown').length) { 
+			$('.session-countdown').countdown({
+				render: function(data) {
+					if (data.years >= 1) {
+						var $days =	(data.years*365)+data.days;
+					} else {
+						var $days = data.days;
+					}
+				  $(this.el).html(
+					  '<div class="day">' + this.leadingZeros($days) + ' <span>Days</span></div>'+
+					  '<div class="hour">' + this.leadingZeros(data.hours, 2) + ' <span>Hours</span></div>'+
+					  '<div class="min">' + this.leadingZeros(data.min, 2) + ' <span>Minutes</span></div>'+
+					  '<div class="sec">' + this.leadingZeros(data.sec, 2) + ' <span>Seconds</span></div>'
+				  );
+				}
+			});
+		}
+		
+
+
+</script>
+

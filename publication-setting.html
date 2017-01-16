@@ -1,0 +1,351 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Jijitang Fron End Development</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-modal.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/popover.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/bootstrap-select.css"  type="text/css"/>
+<link href="css/settings-page.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="mobile-fonts.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+
+
+<link href="style.css" rel="stylesheet" type="text/css">
+
+
+<script src="js/Jquery-11.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap-popover.js"></script>
+<script src="js/bootstrap-tooltip.js"></script>
+<script src="js/bootstrap-modalmanager.js"></script>
+<script src="js/bootstrap-modal.js"></script>
+<script type="text/javascript" src="js/jquery.popover-1.1.2.js"></script>
+<script src="js/bootstrap-select.js"></script>
+<script src="js/mydatepicker.js"></script>
+<script src="js/myjavascript.js"></script>
+
+
+
+<style>
+
+
+
+.editor-all-tags {
+
+margin-bottom: 0px;
+margin-top: 15px !important;
+
+}
+
+.project-keyword-list {
+
+padding-top: 0px !important;
+padding-bottom: 0px !important;
+
+}
+
+footer {
+
+    border-top: 25px solid #ecead4;
+
+}
+
+.create-project-keywords-input {
+
+border: 0px !important;
+
+}
+
+
+
+</style>
+
+
+
+
+
+<!-- HTML5 shim for IE backwards compatibility -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+
+</head>
+
+
+
+<body>
+
+<div id="success-pub-modal" class="modal hide fade sign-modals" tabindex="-1">
+
+	 <div class="modal-header">
+ 
+ <p>NEW PUBLICATION</p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+
+  <div class="modal-body zero-margin" >
+   
+	 <p class="member-cancel-actions-text">Your Publication has been successfully submitted.<br>We will let you know once it has been approved.</p>
+	
+  </div>
+  
+   <div class="controls modal-btn-holder invitation-modal-footer">
+					
+					<button data-dismiss="modal"  class="new-small-button new-black-btn big-long-btns   middle-button" >DONE</button>
+					
+					
+    
+  </div>
+  
+</div>
+
+
+	<div class="modal fade hide" id="project-publications-modal">
+	
+	<div class="modal-header">
+ 
+ <p>NEW PUBLICATION </p>
+ <div class="my-bullets center-bullets"><span></span><span></span><span></span></div>
+ <span data-dismiss="modal" class="lnr lnr-cross close-modal-span"></span>
+ 
+ </div>
+ 
+	<div class="publication-error">Journal Name, publish time, title and author, are all REQUIRED.</div>
+
+	<p class="pub-modal-header">Let's Get your Publication Started !</p>
+
+	<div class="project-publication-modal-inner" >
+	
+		
+		
+		<label class="group-label">Journal Information</label>
+		
+		<div class="input-group two-input-row">
+			
+					<input id="pub-journal" class="form-control"  placeholder="Journal Name">
+					<input id="pub-short-journal" class="form-control"  placeholder="Journal Short Name">
+		</div>
+		
+		<label class="group-label">Publish Date</label>
+		
+		<div class="input-group">
+			
+		<div class="publication-date-filter" style="border-bottom: 15px solid #ecead4">
+								
+								
+								<div>
+								<select class="days"></select>
+								</div>
+								
+								<div class="pub-month-picker-holder">
+								<select class="months">
+								
+									<option value="1">January</option>
+									<option value="2">February</option>
+									<option value="3">March</option>
+									<option value="4">April</option>
+									<option value="5">May</option>
+									<option value="6">June</option>
+									<option value="7">July</option>
+									<option value="8">August</option>
+									<option value="9">September</option>
+									<option value="10">October</option>
+									<option value="11">November</option>
+									<option value="12">December</option>
+								
+								</select>
+								</div>
+								<div>
+								<select class="years"></select>
+								</div>
+								
+								</div>
+					
+						<input id="doi-number" class="form-control"  placeholder="DOI Number">
+						<div class="doi-error">This journal already exists.</div>
+						
+		</div>
+		
+			<div class="input-group">
+			
+				
+					
+			</div>
+		
+		<hr class="user-sep-line">
+		
+		<label class="group-label">Title & Author</label>
+		
+		<div class="input-group">
+			
+					<input id="pub-title" class="form-control"  placeholder="Title">
+		
+					<input id="pub-title-zh" class="form-control"  placeholder="Title in Chinese" style="margin-top: 20px; margin-bottom: 20px !important">
+		
+					
+					<textarea placeholder="Write author names seperated by commas."></textarea>
+					
+		</div>
+		
+		<hr class="user-sep-line">
+		
+		<label class="group-label">Summary</label>
+		
+		<div class="input-group">
+			
+					<textarea style="height: 120px !important"  class="form-control"  placeholder="Introduce your publication in 350 characters"></textarea>
+				
+				
+		</div>
+		
+		<label class="group-label">Keywords<span class="label-optional-span">(Optional)</span></label>
+		
+		<div class="input-group keywords-group " style="margin-bottom: 0px !important;" >
+				
+				<input type="text" class="create-project-keywords-input" id="authors-list" onKeyPress="return disableEnterKey(event)" placeholder="Author Name"/>
+				<a  id="add-tags-btn" class="new-small-button new-black-back-btn add-to-list-btn">Add</a>
+				<div class="pub-tags-list">
+				
+				<div class="editor-all-tags"><span class="tag-text">Astronomy</span><div class="tag-delete lnr lnr-cross"></div></div>
+				
+				</div>
+					
+		</div>
+		
+		
+		
+		<hr class="user-sep-line">
+		
+		<label class="group-label">Link to Full Article<span class="label-optional-span">(Optional - Add link to page where others can find full articles.)</span></label>
+		<div class="input-group keywords-group " >
+				
+		<input  class="form-control"  placeholder="Link">
+
+					
+		</div>
+	
+			
+			
+			
+		</div>
+
+		 <div class="profile-form-btns">
+			
+			 <button type="submit" id="submit-publication"  class="new-small-button new-black-back-btn big-long-btns   middle-button" >SAVE</button>
+			 <button class="new-small-button new-black-btn big-long-btns   middle-button" data-dismiss="modal" >CANCEL</button>
+			
+			</div>
+	
+	
+
+  
+</div><!-- /.modal -->
+
+
+<div class="container-fluid">
+
+
+<div class="header-wrapper">
+		<header >
+        
+        
+		</header>
+  </div>
+  
+  
+  
+  	<div class="padding-wrapper">
+	
+	<div class="padding-wrapper-inner">
+
+	
+	<div class="settings-page">
+	
+		<div class="settings-page-nav">
+		
+		<img src="img/brahim.png" />
+		
+		<div>
+		
+		<a href="account-setting.html" >ACCOUNT</a>
+		<a href="profile-setting.html">PROFILE</a>
+		<a href="research-setting.html">RESEARCH</a>
+		<a href="publication-setting.html"  class="active">PUBLICATION</a>
+		
+		</div>
+		
+		
+		
+		
+		
+		
+		</div>
+		
+		<div class="settings-page-content">
+		
+			<div class="settings-page-header">
+			
+				PUBLICATIONS SETTINGS
+			
+			</div>
+			
+			<div class="publications-wrapper">
+			
+			<div class="project-publications-holder">
+			
+			<p class="project-single-publication">How can I set the default value for an HTML element?<span class="publication-single-toolbar"><span class="single-publication-edit icon-uniE605"></span><span class="single-publication-delete icon-remove"></span></span></p>
+			<p class="project-single-publication">However, this did not work as I had expected. How can I set which<span class="publication-single-toolbar"><span class="single-publication-edit icon-uniE605"></span><span class="single-publication-delete icon-remove"></span></span></p>
+			<p class="project-single-publication">
+12
+down vote
+In case you want to have a default text as a sort of placeholder/hint but not considered a valid value (something like "complete here", "select your nation" ecc.) you can do something like this:<span class="publication-single-toolbar"><span class="single-publication-edit icon-uniE605"></span><span class="single-publication-delete icon-remove"></span></span></p>
+			
+			
+				</div>
+				
+				<a data-toggle="modal" id="add-publication-modal-btn" data-target="#project-publications-modal">ADD YOUR PUBLICATION</a>
+		</div>
+		
+		</div> 
+		
+		
+	
+		
+	
+	
+	
+	</div>
+	
+			
+
+	
+	</div>
+	
+	</div>
+        
+		<footer></footer>
+
+    </div>
+
+
+
+<script>
+
+$( "header" ).load( "header-jijitang.html" );
+$( "footer" ).load( "footer.html" );
+
+
+
+  
+
+</script>
+
